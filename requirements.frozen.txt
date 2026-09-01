@@ -1,0 +1,2 @@
+# python: Python 3.12.3
+pip==25.1.1

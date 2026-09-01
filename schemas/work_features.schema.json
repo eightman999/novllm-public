@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "novllm/work_features.schema.json",
+  "title": "作品構造化特徴（短編LLM抽出）",
+  "description": "PLAN_20260726.md Phase 1-3。タグを直接答えさせず、物語の構造を項目として抽出し、それを分類器の特徴量／中間表現として使う。作者申告キーワードとの突合（1-5）で信頼性を検証する前提。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protagonist_gender",
+    "protagonist_count",
+    "viewpoint_person",
+    "setting_world",
+    "setting_era",
+    "world_transfer",
+    "ending_type",
+    "main_relationships",
+    "sexual_content",
+    "violence_content",
+    "story_shape",
+    "protagonist_role",
+    "confidence"
+  ],
+  "properties": {
+    "protagonist_gender": {
+      "description": "主人公の性別。作中で明示されない場合は unclear。複数主人公なら multiple。",
+      "enum": ["male", "female", "multiple", "non_human_or_none", "unclear"]
+    },
+    "protagonist_count": {
+      "description": "視点を担う主要人物の人数。3人以上は 3 とする（群像劇の判定材料）。",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "viewpoint_person": {
+      "description": "地の文の人称・視点。",
+      "enum": ["first", "third_limited", "third_omniscient", "second", "mixed", "unclear"]
+    },
+    "setting_world": {
+      "description": "物語世界の種別。転生・転移そのものではなく、物語が主に進行する舞台を答える。",
+      "enum": [
+        "contemporary_real",
+        "historical_real",
+        "near_future",
+        "far_future_sf",
+        "secondary_world_fantasy",
+        "modern_fantasy",
+        "post_apocalypse",
+        "virtual_or_game",
+        "other",
+        "unclear"
+      ]
+    },
+    "setting_era": {
+      "description": "舞台の年代。実在年代が特定できる場合のみ西暦の目安を書き、架空世界は該当ラベルを使う。",
+      "type": "string",
+      "maxLength": 40
+    },
+    "world_transfer": {
+      "description": "主人公が異世界・別世界と関わった経緯。reincarnation=死亡等により元の肉体を失い、別人・別存在として異世界に生まれ変わった（異世界転生）。transfer=元の肉体・自我を保ったまま、生きている状態で異世界へ移動した（異世界転移）。returned=異世界から元の世界へ戻った、またはその途中。none=異世界との関わりがない（現代物・現実世界のみが舞台）。unclear=本文だけでは判別できない。この区別はタグを答えることではなく、本文に描かれた移動の物理的な経緯（死んだか、生きたまま移動したか）を読み取ることである。",
+      "enum": ["reincarnation", "transfer", "returned", "none", "unclear"]
+    },
+    "ending_type": {
+      "description": "結末の種類。未完・打ち切りは unresolved。",
+      "enum": ["happy", "bittersweet", "tragic", "open", "cyclical", "unresolved", "unclear"]
+    },
+    "main_relationships": {
+      "description": "物語の軸になっている人間関係。最大4件。",
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "salience"],
+        "properties": {
+          "kind": {
+            "enum": [
+              "romance_heterosexual",
+              "romance_male_male",
+              "romance_female_female",
+              "harem_multiple_partners",
+              "family",
+              "master_servant",
+              "mentor_student",
+              "comrades",
+              "rivalry",
+              "antagonism",
+              "friendship",
+              "other"
+            ]
+          },
+          "salience": {
+            "description": "その関係が物語全体に占める重み。",
+            "enum": ["central", "major", "minor"]
+          }
+        }
+      }
+    },
+    "sexual_content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["present", "explicitness"],
+      "properties": {
+        "present": { "type": "boolean" },
+        "explicitness": {
+          "description": "0=無 1=示唆・ほのめかし 2=描写あり(非露骨) 3=露骨な描写",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        }
+      }
+    },
+    "violence_content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["present", "explicitness"],
+      "properties": {
+        "present": { "type": "boolean" },
+        "explicitness": {
+          "description": "0=無 1=戦闘や暴力の言及のみ 2=描写あり 3=残酷・凄惨な描写",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        }
+      }
+    },
+    "story_shape": {
+      "description": "物語の型。最大3件、重要な順。",
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "enum": [
+          "coming_of_age",
+          "revenge",
+          "quest_adventure",
+          "romance_courtship",
+          "slice_of_life",
+          "mystery_investigation",
+          "war_campaign",
+          "political_intrigue",
+          "survival",
+          "tragedy_downfall",
+          "rise_to_power",
+          "workplace_or_craft",
+          "horror_confrontation",
+          "comedy",
+          "other"
+        ]
+      }
+    },
+    "protagonist_role": {
+      "description": "主人公の物語上の役割。該当がなければ other。",
+      "enum": [
+        "chosen_hero",
+        "reluctant_hero",
+        "ordinary_person",
+        "villain_or_antihero",
+        "noble_or_ruler",
+        "soldier_or_knight",
+        "merchant_or_artisan",
+        "servant_or_slave",
+        "scholar_or_mage",
+        "observer_narrator",
+        "other"
+      ]
+    },
+    "confidence": {
+      "description": "全文を読んだ上での判定の確からしさ。断片しか読めていない場合は低くする。",
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence": {
+      "description": "判定の根拠となる本文の短い引用または要約。最大3件、各80字以内。",
+      "type": "array",
+      "maxItems": 3,
+      "items": { "type": "string", "maxLength": 80 }
+    }
+  }
+}

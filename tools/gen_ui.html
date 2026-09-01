@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>novllm 条件付き生成</title>
+<style>
+  :root { color-scheme: light dark; --bd: #8883; --acc: #4a7dbd; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.6 -apple-system, "Hiragino Sans", sans-serif; }
+  header { padding: 10px 16px; border-bottom: 1px solid var(--bd);
+           display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap; }
+  header h1 { font-size: 15px; margin: 0; font-weight: 600; }
+  header .meta { font-size: 12px; opacity: .7; font-family: ui-monospace, monospace; }
+  main { display: grid; grid-template-columns: 340px 1fr; gap: 0; height: calc(100vh - 47px); }
+  @media (max-width: 800px) { main { grid-template-columns: 1fr; height: auto; } }
+  #panel { border-right: 1px solid var(--bd); padding: 14px 16px; overflow-y: auto; }
+  #right { display: flex; flex-direction: column; padding: 14px 16px; gap: 10px; min-height: 0; }
+  fieldset { border: 1px solid var(--bd); border-radius: 6px; margin: 0 0 14px; padding: 10px 12px; }
+  legend { font-size: 12px; font-weight: 600; opacity: .8; padding: 0 4px; }
+  label { display: block; margin: 4px 0; }
+  select { width: 100%; padding: 5px; }
+  .chk { display: inline-block; width: 50%; font-size: 13px; }
+  .slider { margin: 10px 0; }
+  .slider .row { display: flex; justify-content: space-between; font-size: 12px; }
+  .slider .row b { font-family: ui-monospace, monospace; font-weight: 600; }
+  input[type=range] { width: 100%; accent-color: var(--acc); }
+  textarea { width: 100%; font: 14px/1.7 "Hiragino Sans", sans-serif; padding: 8px;
+             border: 1px solid var(--bd); border-radius: 6px; background: transparent;
+             color: inherit; resize: vertical; }
+  #out { flex: 1; min-height: 220px; white-space: pre-wrap; overflow-y: auto;
+         border: 1px solid var(--bd); border-radius: 6px; padding: 12px;
+         font: 15px/1.9 "Hiragino Mincho ProN", serif; }
+  #prompt-line { font: 11px/1.5 ui-monospace, monospace; opacity: .65;
+                 word-break: break-all; padding: 6px 8px; border: 1px dashed var(--bd);
+                 border-radius: 4px; }
+  .bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  button { padding: 7px 16px; border-radius: 6px; border: 1px solid var(--bd);
+           background: var(--acc); color: #fff; cursor: pointer; font-size: 14px; }
+  button.sec { background: transparent; color: inherit; }
+  button:disabled { opacity: .45; cursor: default; }
+  #stats { font: 12px ui-monospace, monospace; opacity: .8; }
+  #stats b { font-size: 15px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>novllm 条件付き生成</h1>
+  <span class="meta" id="adapter">adapter: 読み込み中…</span>
+</header>
+
+<main>
+<div id="panel">
+  <fieldset>
+    <legend>条件（学習した control_tags）</legend>
+    <label>viewpoint（視点人称）
+      <select id="viewpoint">
+        <option value="">unknown（指定しない）</option>
+        <option value="first_person" selected>first_person（一人称）</option>
+        <option value="third_person">third_person（三人称）</option>
+      </select>
+    </label>
+    <label>protagonist_gender（主人公の性別）
+      <select id="protagonist_gender">
+        <option value="">unknown（指定しない）</option>
+        <option value="male">male</option>
+        <option value="female" selected>female</option>
+        <option value="multiple">multiple（群像）</option>
+        <option value="non_human">non_human</option>
+      </select>
+    </label>
+    <label style="margin-top:8px">setting</label>
+    <div id="setting"></div>
+    <label style="margin-top:8px">genre</label>
+    <div id="genre"></div>
+    <label style="margin-top:10px">
+      <input type="checkbox" id="r18"> r18（成人向け）
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>生成パラメータ</legend>
+    <div class="slider" data-key="temperature" data-min="0.1" data-max="2" data-step="0.05" data-val="0.9"></div>
+    <div class="slider" data-key="top_p" data-min="0.1" data-max="1" data-step="0.01" data-val="0.95"></div>
+    <div class="slider" data-key="top_k" data-min="0" data-max="200" data-step="1" data-val="50"></div>
+    <div class="slider" data-key="repetition_penalty" data-min="1" data-max="1.5" data-step="0.01" data-val="1.05"></div>
+    <div class="slider" data-key="max_new_tokens" data-min="50" data-max="1200" data-step="10" data-val="300"></div>
+  </fieldset>
+</div>
+
+<div id="right">
+  <label style="font-size:12px;opacity:.8">書き出し（この続きを生成します）</label>
+  <textarea id="body" rows="3">朝の教室に足を踏み入れると、</textarea>
+  <div class="bar">
+    <button id="go">生成</button>
+    <button id="stop" class="sec" disabled>中止</button>
+    <span id="stats">—</span>
+  </div>
+  <div id="prompt-line">条件行はここに表示されます</div>
+  <div id="out"></div>
+</div>
+</main>
+
+<script>
+const SETTINGS = ["isekai", "isekai_reincarnation", "isekai_transfer",
+                 "contemporary", "school", "historical"];
+const GENRES = ["romance", "harem", "military", "war", "school", "contemporary",
+                "historical", "sf", "horror", "mystery", "bl", "gl", "ts",
+                "ensemble_cast", "original_war_chronicle", "fictional_war_chronicle",
+                "if_war_chronicle"];
+
+function checkboxes(host, items) {
+  host.innerHTML = items.map(v =>
+    `<label class="chk"><input type="checkbox" value="${v}"> ${v}</label>`).join("");
+}
+checkboxes(document.getElementById("setting"), SETTINGS);
+checkboxes(document.getElementById("genre"), GENRES);
+
+// スライダーを組み立てる（値は常に画面に出す）
+document.querySelectorAll(".slider").forEach(el => {
+  const k = el.dataset.key;
+  el.innerHTML = `<div class="row"><span>${k}</span><b id="v_${k}">${el.dataset.val}</b></div>
+    <input type="range" id="s_${k}" min="${el.dataset.min}" max="${el.dataset.max}"
+           step="${el.dataset.step}" value="${el.dataset.val}">`;
+  const input = el.querySelector("input");
+  input.addEventListener("input", () => document.getElementById("v_" + k).textContent = input.value);
+});
+
+const checked = id => [...document.querySelectorAll(`#${id} input:checked`)].map(e => e.value);
+const num = k => parseFloat(document.getElementById("s_" + k).value);
+
+fetch("/info").then(r => r.json()).then(d => {
+  document.getElementById("adapter").textContent = "adapter: " + d.adapter;
+});
+
+let controller = null;
+const out = document.getElementById("out");
+const stats = document.getElementById("stats");
+const go = document.getElementById("go");
+const stopBtn = document.getElementById("stop");
+
+go.onclick = async () => {
+  out.textContent = "";
+  stats.textContent = "生成中…";
+  go.disabled = true; stopBtn.disabled = false;
+  controller = new AbortController();
+
+  const payload = {
+    viewpoint: document.getElementById("viewpoint").value,
+    protagonist_gender: document.getElementById("protagonist_gender").value,
+    setting: checked("setting"),
+    genre: checked("genre"),
+    r18: document.getElementById("r18").checked ? "yes" : "no",
+    body: document.getElementById("body").value,
+    temperature: num("temperature"), top_p: num("top_p"), top_k: num("top_k"),
+    repetition_penalty: num("repetition_penalty"), max_new_tokens: num("max_new_tokens"),
+  };
+
+  try {
+    const res = await fetch("/generate", {
+      method: "POST", headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(payload), signal: controller.signal,
+    });
+    const reader = res.body.getReader();
+    const dec = new TextDecoder();
+    let buf = "";
+    while (true) {
+      const {done, value} = await reader.read();
+      if (done) break;
+      buf += dec.decode(value, {stream: true});
+      const parts = buf.split("\n\n");
+      buf = parts.pop();
+      for (const part of parts) {
+        if (!part.startsWith("data: ")) continue;
+        const ev = JSON.parse(part.slice(6));
+        if (ev.type === "prompt") {
+          document.getElementById("prompt-line").textContent = ev.text.split("\n")[0];
+        } else if (ev.type === "token") {
+          out.textContent += ev.text;
+          out.scrollTop = out.scrollHeight;
+          stats.innerHTML = `<b>${ev.tps}</b> tok/s（復号）&nbsp; ${ev.n} tok &nbsp; ` +
+            `プロンプト処理 ${ev.prompt_s}s`;
+        } else if (ev.type === "done") {
+          stats.innerHTML = `完了 &nbsp; <b>${ev.tps}</b> tok/s（復号）&nbsp; ` +
+            `生成${ev.n} tok &nbsp; プロンプト ${ev.prompt_tokens} tok / ${ev.prompt_s}s ` +
+            `&nbsp; 合計 ${ev.elapsed}s`;
+        } else if (ev.type === "error") {
+          stats.textContent = "エラー: " + ev.message;
+        }
+      }
+    }
+  } catch (e) {
+    if (e.name !== "AbortError") stats.textContent = "通信エラー: " + e.message;
+  } finally {
+    go.disabled = false; stopBtn.disabled = true; controller = null;
+  }
+};
+
+stopBtn.onclick = () => { if (controller) controller.abort(); stats.textContent = "中止しました"; };
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+# Training data (large JSONL corpus, ~2.8GB)
+data/
+*.jsonl
+*.parquet
+*.arrow
+*.sqlite
+*.sqlite3
+pipeline/tests/_phase8_qc_result.json
+
+# Model weights / adapters / checkpoints
+out/
+out-*/
+*out-*/
+checkpoint-*/
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+
+# 実行ログ・状態ファイル
+run_logs/
+
+# Virtual environments
+.venv/
+venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# IDE / OS
+.idea/
+.DS_Store
+
+# 実データ・成果物へのシンボリックリンク
+data
+dataset_v2*.tmp
+dataset_v2*.tmp.*
+lora_out-*
+pruned_out-*
+*.db
+
+# 実験の生出力
+runs/
+summaries/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
