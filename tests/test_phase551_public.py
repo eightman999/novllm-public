@@ -60,5 +60,44 @@ class PublicExportTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             public.aggregate([self.run_fixture(), self.run_fixture()])
 
+class Phase5PublicExportTest(unittest.TestCase):
+    def fixture(self):
+        return {'format':'novllm-phase5-summary', 'candidate_count':1, 'freeze':False,
+                'summaries':[{'candidate_id':'j-reversible-sp-unigram-32k','recipe':'J','vocab_size':32000,
+                  'exact_round_trip_rate':1.0,'categories':{'kanbun':{'chars':100,'characters_per_token':1.5}}}],
+                'shortlist':[],'shortlist_rationale':[]}
+
+    def export_fixture(self, data, folder):
+        import json
+        path=folder/'input.json';path.write_text(json.dumps(data))
+        return public.export_phase5(path,folder/'out')
+
+    def test_allowlist_and_unknown_preservation(self):
+        import json, tempfile
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);data=self.fixture()
+            data['private_endpoint']='private-secret-marker'
+            data['summaries'][0]['categories']['kanbun']['document_id']='private-secret-marker'
+            data['summaries'][0]['categories']['kanbun']['text']='private-secret-marker'
+            tables=self.export_fixture(data,root)
+            self.assertEqual(tables['category_metrics'][0]['characters_per_token'],1.5)
+            self.assertIsNone(tables['category_metrics'][0]['unknown_token_count'])
+            self.assertNotIn('private-secret-marker',''.join(p.read_text() for p in (root/'out').iterdir()))
+            metadata=json.loads((root/'out/provenance.json').read_text())
+            self.assertEqual(metadata['source_sha256'],hashlib.sha256((root/'input.json').read_bytes()).hexdigest())
+
+    def test_identity_and_type_injection_rejected(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            for key,value in [('candidate_id','private-secret-marker'),('exact_round_trip_rate','private-secret-marker')]:
+                data=self.fixture();data['summaries'][0][key]=value
+                with self.assertRaises(ValueError):self.export_fixture(data,root)
+
+    def test_lm_candidate_gate_not_expanded(self):
+        fixture=PublicExportTest().run_fixture()
+        fixture[0]['candidate']='j-reversible-sp-unigram-8k'
+        with self.assertRaises(ValueError):public.aggregate([fixture])
+
 if __name__ == '__main__':
     unittest.main()

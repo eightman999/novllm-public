@@ -170,15 +170,119 @@ def export(payload, extras, output):
                 writer.writerows(rows)
     return tables
 
+# Phase 5 tokenizer-only observations have a separate, bounded identity domain.
+PHASE5_SIZES = {8000, 16000, 24000, 32000, 48000, 64000}
+PHASE5_DOMAINS = DOMAINS | {'code', 'english', 'modern_ja', 'ruby_rendered', 'technical_ja'}
+
+
+def phase5_identity(row):
+    recipe, size = row.get('recipe'), row.get('vocab_size')
+    if recipe not in {'W', 'N', 'J'} or size not in PHASE5_SIZES:
+        raise ValueError('unknown Phase 5 candidate')
+    candidate = f'{recipe.lower()}-reversible-sp-unigram-{size // 1000}k'
+    if row.get('candidate_id', candidate) != candidate:
+        raise ValueError('Phase 5 candidate identity mismatch')
+    return {'candidate': candidate, 'recipe': recipe, 'vocab_size': size}
+
+
+def export_phase5(source, output):
+    """Extract recorded aggregate fields only; no text, paths or free-form IDs."""
+    raw = Path(source).read_bytes()
+    data = json.loads(raw)
+    if data.get('format') != 'novllm-phase5-summary':
+        raise ValueError('unsupported Phase 5 summary')
+    tables = {k: [] for k in ('summary', 'category_metrics', 'parameter_cost', 'shortlist', 'saturation', 'saturation_exclusions', 'web_regressions')}
+    seen = set()
+    for row in data.get('summaries', []):
+        identity = phase5_identity(row)
+        if identity['candidate'] in seen:
+            raise ValueError('duplicate Phase 5 candidate')
+        seen.add(identity['candidate'])
+        tables['summary'].append({**identity, **numbers(row, ['exact_round_trip_rate'])})
+        for domain, values in sorted(row.get('categories', {}).items()):
+            if domain not in PHASE5_DOMAINS:
+                raise ValueError('unknown Phase 5 category')
+            tables['category_metrics'].append({**identity, 'category': domain, **numbers(values,
+                'documents chars utf8_bytes characters_per_token bytes_per_token exact_round_trip_rate unknown_token_count byte_fallback_tokens fallback_byte_token_utilization average_piece_length longest_piece_chars token_count_p50 token_count_p90 token_count_p99 tokens_per_document tokens_per_episode'.split()),
+                **{f'context_chars_{n}': v for n,v in numbers(values.get('context_chars', {}), ['512','1024','2048','4096']).items()}})
+    if not seen or len(seen) != data.get('candidate_count'):
+        raise ValueError('Phase 5 candidate count mismatch')
+    for row in data.get('parameter_cost', {}).get('rows', []):
+        tables['parameter_cost'].append(numbers(row, 'hidden_dim_assumed model_parameters tied_parameters tied_percent_model untied_parameters untied_percent_model vocab_size'.split()))
+    shortlist = data.get('shortlist', [])
+    if len(shortlist) != len(set(shortlist)) or not set(shortlist) <= seen:
+        raise ValueError('invalid Phase 5 shortlist')
+    for row in data.get('shortlist_rationale', []):
+        identity = phase5_identity(row)
+        if identity['candidate'] not in shortlist:
+            raise ValueError('shortlist rationale mismatch')
+        tables['shortlist'].append({**identity, **numbers(row, ['cultural_chars_per_token_mean', 'web_regression_percent'])})
+    if {r['candidate'] for r in tables['shortlist']} != set(shortlist) or len(tables['shortlist']) != len(shortlist):
+        raise ValueError('incomplete shortlist rationale')
+    for row in data.get('saturation', []):
+        if row.get('recipe') not in {'W','N','J'} or row.get('category') not in PHASE5_DOMAINS:
+            raise ValueError('unknown saturation identity')
+        tables['saturation'].append({'recipe':row['recipe'], 'category':row['category'], **numbers(row, 'from_vocab to_vocab delta_chars_per_token delta_cpt_per_million_tied_parameters delta_tied_parameters_at_hidden_768'.split())})
+    for row in data.get('saturation_exclusions', []):
+        tables['saturation_exclusions'].append({**phase5_identity(row), **numbers(row, ['mean_cultural_delta_cpt_per_million_tied_parameters','threshold'])})
+    for row in data.get('web_regressions', []):
+        if row.get('category') != 'web_novel' or row.get('metric') not in {'characters_per_token','bytes_per_token','tokens_per_document','token_count_p99'}:
+            raise ValueError('unknown web regression metric')
+        tables['web_regressions'].append({**phase5_identity(row), 'category':'web_novel','metric':row['metric'], **numbers(row, ['delta_percent','regression_percent'])})
+    limitations = data.get('small_probe_limitation', [])
+    if any(x not in PHASE5_DOMAINS for x in limitations):
+        raise ValueError('unknown small-probe category')
+    metadata = {'source_sha256': hashlib.sha256(raw).hexdigest(), 'source_format':'novllm-phase5-summary',
+        'candidate_count':len(seen), 'freeze':data.get('freeze') if type(data.get('freeze')) is bool else None,
+        'small_probe_limitation':limitations, 'parameter_cost_provenance':'derived in source; assumed hidden dimensions, tied one matrix, untied two matrices',
+        'scope':'historical tokenizer-only evaluation; not LM measurements or a new freeze decision'}
+    output = Path(output); output.mkdir(parents=True, exist_ok=True)
+    for name, rows in tables.items():
+        (output/(name+'.json')).write_text(json.dumps(rows, indent=2, allow_nan=False)+'\n')
+        if rows:
+            with (output/(name+'.csv')).open('w', newline='') as handle:
+                writer=csv.DictWriter(handle,fieldnames=list(rows[0]),lineterminator='\n');writer.writeheader();writer.writerows(rows)
+    (output/'provenance.json').write_text(json.dumps(metadata,indent=2,allow_nan=False)+'\n')
+    (output/'README.md').write_text('''# Phase 5 historical tokenizer observations
+
+Allowlisted export of the original Phase 5 summary, with its SHA-256 in
+`provenance.json`. CSV and JSON contain identical recorded values. Missing values
+are JSON null / CSV empty; no missing measurements were reconstructed.
+
+- `summary`: candidate identity and recorded round-trip rate.
+- `category_metrics`: compression, reversibility and category size observations.
+- `parameter_cost`: source-derived embedding/head cost under assumed hidden sizes;
+  these are not measured trained-model parameter counts.
+- `saturation`, `saturation_exclusions`, `web_regressions`: historical derived comparisons.
+- `shortlist`: the historical four-candidate selection and its recorded metrics.
+
+This is tokenizer-only evaluation. Small kanbun, kakikudashi, gyaru and technical
+probes are historical limitations. The shortlist and saturation exclusions do not
+supersede subsequent Phase 5.5 LM results or the J64 exploratory experiment.
+Freeze remains undecided; no Phase 6 result is claimed. Corpus text, original
+item identifiers, arbitrary source prose, private paths and checkpoints are omitted.
+
+Recreate this directory from an authorized local copy of the source summary:
+
+```bash
+python scripts/export_phase551_public.py --phase5-summary SOURCE_SUMMARY.json --output results/phase5
+```
+''')
+    return tables
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--payload', type=Path)
+    parser.add_argument('--phase5-summary', type=Path, help='tokenizer-only historical summary; use a separate output directory')
     parser.add_argument('--extra-run', type=Path, action='append', default=[])
     parser.add_argument('--tokenizer-config-root', type=Path)
     parser.add_argument('--software-observation', type=Path)
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
-    tables = export(args.payload, args.extra_run, args.output)
+    if args.phase5_summary and (args.payload or args.extra_run or args.tokenizer_config_root or args.software_observation):
+        parser.error('--phase5-summary requires a separate export invocation')
+    tables = export_phase5(args.phase5_summary, args.output) if args.phase5_summary else export(args.payload, args.extra_run, args.output)
     if args.tokenizer_config_root:
         export_tokenizers(args.tokenizer_config_root, args.output)
     if args.software_observation:
