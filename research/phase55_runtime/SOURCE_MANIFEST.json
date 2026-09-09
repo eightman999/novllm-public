@@ -1,0 +1,65 @@
+{
+  "source_archive_sha256": "f441c2258b3cd39100c319dd8a1871dd02bd6a0190b98c367ad6f0287922f774",
+  "files": [
+    {
+      "path": "canonical_corpus/__init__.py",
+      "source_sha256": "2cfa10a5da54e569bca498d35ca803fd483137c35f97a88bbb6ca1e1070275ce",
+      "published_sha256": "2cfa10a5da54e569bca498d35ca803fd483137c35f97a88bbb6ca1e1070275ce",
+      "modified": false
+    },
+    {
+      "path": "canonical_corpus/phase55_data.py",
+      "source_sha256": "6a044b3d894900ddffb6852091dac05ff75bcf14239f66568378ec991fe76bdb",
+      "published_sha256": "6a044b3d894900ddffb6852091dac05ff75bcf14239f66568378ec991fe76bdb",
+      "modified": false
+    },
+    {
+      "path": "canonical_corpus/phase5_data.py",
+      "source_sha256": "005ea57d90ffa03d193c85dfe99ce40ed95a9daf0e814ca88b241c74b68b2b3a",
+      "published_sha256": "005ea57d90ffa03d193c85dfe99ce40ed95a9daf0e814ca88b241c74b68b2b3a",
+      "modified": false
+    },
+    {
+      "path": "canonical_corpus/source.py",
+      "source_sha256": "91ef67dc42942b801237474c89454ec75c8b1bcf4539a50234a78fbd6416fd79",
+      "published_sha256": "91ef67dc42942b801237474c89454ec75c8b1bcf4539a50234a78fbd6416fd79",
+      "modified": false
+    },
+    {
+      "path": "canonical_corpus/phase55_same_source_runtime.py",
+      "source_sha256": "33e6e410f86184270f4dd9d89e6c2ae58563f84517e6d8e818c7fe570106d18c",
+      "published_sha256": "33e6e410f86184270f4dd9d89e6c2ae58563f84517e6d8e818c7fe570106d18c",
+      "modified": false
+    },
+    {
+      "path": "canonical_corpus/probe_lm.py",
+      "source_sha256": "838899fd3e750e34798aab67eba83ee9d75982f26ec0cc1002d4aea720ace060",
+      "published_sha256": "838899fd3e750e34798aab67eba83ee9d75982f26ec0cc1002d4aea720ace060",
+      "modified": false
+    },
+    {
+      "path": "canonical_corpus/probe_lm_data.py",
+      "source_sha256": "3bdfbde42b2c0dec92070f51492765b3deade9f2fb07920d0a856b4fb044a726",
+      "published_sha256": "3bdfbde42b2c0dec92070f51492765b3deade9f2fb07920d0a856b4fb044a726",
+      "modified": false
+    },
+    {
+      "path": "canonical_corpus/tokenizer_adapters.py",
+      "source_sha256": "bded6cb316227f19f7b78d3864089ebceb0b4b78e3fe1f7e2bce39de40b8ac33",
+      "published_sha256": "bded6cb316227f19f7b78d3864089ebceb0b4b78e3fe1f7e2bce39de40b8ac33",
+      "modified": false
+    },
+    {
+      "path": "scripts/run_phase55_cuda_same_source.py",
+      "source_sha256": "062197e78de33ea704b14a2adbfa2c4ab9b70b6dbf557ca7ee90b8cbc32996c3",
+      "published_sha256": "ff06a99857370a462e3bed0172c0064d2b1fcbfd30c7b1fc1555b33219bdf194",
+      "modified": true
+    },
+    {
+      "path": "protocol.json",
+      "source_sha256": "61a5f130f7306ed86afba1da7505ee0ae8a4ea52a1ff509f5c43cab19e16da1e",
+      "published_sha256": "61a5f130f7306ed86afba1da7505ee0ae8a4ea52a1ff509f5c43cab19e16da1e",
+      "modified": false
+    }
+  ]
+}

@@ -28,10 +28,10 @@ No corpus text, raw document identifiers, private endpoints, absolute paths, che
 
 ## Code / CLI mapping
 
-- Dataset preparation and preserved source accounting: `canonical_corpus/phase55_data.py`, `canonical_corpus/phase55_same_source_runtime.py`.
-- Training and evaluation: `scripts/run_phase55_cuda_same_source.py run --seed 1 --candidate j-reversible-sp-unigram-32k` (existing runtime setup required). `pair` runs J32/J48, `smoke` is a preflight, and `report --seed 1` aggregates the seed.
-- Table export: `python3 scripts/export_phase551_public.py --payload INPUT.zip --output results/phase55_public`.
-- J64 export after completion: add `--extra-run RUN_DIRECTORY`, whose layout is `artifacts/metrics.json`, `artifacts/config.json`, and optional `hardware.json`. Use `results/phase551_public` for the combined comparison. No missing J64 values are fabricated.
+- Dataset preparation and preserved source accounting: `research/phase55_runtime/canonical_corpus/phase55_data.py`, `research/phase55_runtime/canonical_corpus/phase55_same_source_runtime.py`.
+- Training and evaluation: `python3 research/phase55_runtime/scripts/run_phase55_cuda_same_source.py run --seed 1 --candidate j-reversible-sp-unigram-32k --run-root LOCAL_INPUTS` (existing runtime setup required). `pair` runs J32/J48, `smoke` is a preflight, and `report --seed 1` aggregates the seed.
+- Table export: `python3 scripts/export_phase551_public.py --payload INPUT.zip --output results/phase55`.
+- J64 export after completion: add `--extra-run RUN_DIRECTORY`, whose layout is `artifacts/metrics.json`, `artifacts/config.json`, and optional `hardware.json`. Use `results/phase551` for the combined comparison. No missing J64 values are fabricated.
 - Boundary tests: `python3 -m unittest discover -s tests -p test_phase551_public.py`.
 
 The archived protocol and per-run controls differ in checkpoint fractions; the tables preserve per-run controls and actual curves. Code hashes in the original runs identify the historical runtime, which may differ from current repository code.

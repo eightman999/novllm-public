@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "py_compile: 9 passed",
+    "relative_import_closure: passed",
+    "isolated_cli_help: passed",
+    "escape_roundtrip: 3 passed",
+    "parameter_formula_vs_instantiated_model: passed",
+    "published_hashes: 10 passed",
+    "private_path_endpoint_key_marker_scan: passed"
+  ],
+  "cuda_training_executed": false,
+  "missing_inputs": "dataset and tokenizer artifacts not included",
+  "end_to_end_reproduction_verified": false
+}
