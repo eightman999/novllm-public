@@ -174,6 +174,7 @@ python tools/build_summaries.py \
 
 Tokenizer freeze is not decided. Phase 6 has not started.
 
+- [Phase 5 tokenizer-only observations](results/phase5/README.md): 18 candidates and 324 category measurements.
 - [Phase 5.5 measured tables](results/phase55/README.md): final/domain/checkpoint BPB, compression, timing, memory, model size and provenance.
 - [Hardened kanbun/kakikudashi evaluation](results/phase551/audit/README.md): 457 works per category, text-match audit, paired work-bootstrap intervals, and public-source retrieval hashes.
 - [Fixed runtime and input requirements](research/phase55_runtime/README.md).

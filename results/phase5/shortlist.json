@@ -1,0 +1,30 @@
+[
+  {
+    "candidate": "n-reversible-sp-unigram-24k",
+    "recipe": "N",
+    "vocab_size": 24000,
+    "cultural_chars_per_token_mean": 2.074924872845485,
+    "web_regression_percent": 0.5765650615465745
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-32k",
+    "recipe": "N",
+    "vocab_size": 32000,
+    "cultural_chars_per_token_mean": 2.16103838614243,
+    "web_regression_percent": 0.8465791292328939
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-32k",
+    "recipe": "J",
+    "vocab_size": 32000,
+    "cultural_chars_per_token_mean": 2.2032685120441036,
+    "web_regression_percent": 1.905820015383286
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-48k",
+    "recipe": "J",
+    "vocab_size": 48000,
+    "cultural_chars_per_token_mean": 2.3647909714220683,
+    "web_regression_percent": 0.20212847408314083
+  }
+]

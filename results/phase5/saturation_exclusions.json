@@ -1,0 +1,23 @@
+[
+  {
+    "candidate": "w-reversible-sp-unigram-64k",
+    "recipe": "W",
+    "vocab_size": 64000,
+    "mean_cultural_delta_cpt_per_million_tied_parameters": 0.005137102625505359,
+    "threshold": 0.01
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-64k",
+    "recipe": "N",
+    "vocab_size": 64000,
+    "mean_cultural_delta_cpt_per_million_tied_parameters": 0.008146658182452422,
+    "threshold": 0.01
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-64k",
+    "recipe": "J",
+    "vocab_size": 64000,
+    "mean_cultural_delta_cpt_per_million_tied_parameters": 0.008279460086838362,
+    "threshold": 0.01
+  }
+]

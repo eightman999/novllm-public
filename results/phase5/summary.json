@@ -1,0 +1,110 @@
+[
+  {
+    "candidate": "j-reversible-sp-unigram-8k",
+    "recipe": "J",
+    "vocab_size": 8000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-16k",
+    "recipe": "J",
+    "vocab_size": 16000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-24k",
+    "recipe": "J",
+    "vocab_size": 24000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-32k",
+    "recipe": "J",
+    "vocab_size": 32000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-48k",
+    "recipe": "J",
+    "vocab_size": 48000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-64k",
+    "recipe": "J",
+    "vocab_size": 64000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-8k",
+    "recipe": "N",
+    "vocab_size": 8000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-16k",
+    "recipe": "N",
+    "vocab_size": 16000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-24k",
+    "recipe": "N",
+    "vocab_size": 24000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-32k",
+    "recipe": "N",
+    "vocab_size": 32000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-48k",
+    "recipe": "N",
+    "vocab_size": 48000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-64k",
+    "recipe": "N",
+    "vocab_size": 64000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "w-reversible-sp-unigram-8k",
+    "recipe": "W",
+    "vocab_size": 8000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "w-reversible-sp-unigram-16k",
+    "recipe": "W",
+    "vocab_size": 16000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "w-reversible-sp-unigram-24k",
+    "recipe": "W",
+    "vocab_size": 24000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "w-reversible-sp-unigram-32k",
+    "recipe": "W",
+    "vocab_size": 32000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "w-reversible-sp-unigram-48k",
+    "recipe": "W",
+    "vocab_size": 48000,
+    "exact_round_trip_rate": 1.0
+  },
+  {
+    "candidate": "w-reversible-sp-unigram-64k",
+    "recipe": "W",
+    "vocab_size": 64000,
+    "exact_round_trip_rate": 1.0
+  }
+]

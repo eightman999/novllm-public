@@ -1,0 +1,14 @@
+{
+  "source_sha256": "59ddec73b67d16c4420e89bb1dd645b0ddcc5fb7910639da23d459128327b986",
+  "source_format": "novllm-phase5-summary",
+  "candidate_count": 18,
+  "freeze": false,
+  "small_probe_limitation": [
+    "kanbun",
+    "kakikudashi",
+    "gyaru",
+    "technical"
+  ],
+  "parameter_cost_provenance": "derived in source; assumed hidden dimensions, tied one matrix, untied two matrices",
+  "scope": "historical tokenizer-only evaluation; not LM measurements or a new freeze decision"
+}

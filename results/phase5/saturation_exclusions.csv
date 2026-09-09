@@ -1,0 +1,4 @@
+candidate,recipe,vocab_size,mean_cultural_delta_cpt_per_million_tied_parameters,threshold
+w-reversible-sp-unigram-64k,W,64000,0.005137102625505359,0.01
+n-reversible-sp-unigram-64k,N,64000,0.008146658182452422,0.01
+j-reversible-sp-unigram-64k,J,64000,0.008279460086838362,0.01

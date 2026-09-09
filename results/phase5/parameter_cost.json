@@ -1,0 +1,218 @@
+[
+  {
+    "hidden_dim_assumed": 512,
+    "model_parameters": 70000000,
+    "tied_parameters": 4096000,
+    "tied_percent_model": 5.851428571428571,
+    "untied_parameters": 8192000,
+    "untied_percent_model": 11.702857142857143,
+    "vocab_size": 8000
+  },
+  {
+    "hidden_dim_assumed": 512,
+    "model_parameters": 70000000,
+    "tied_parameters": 8192000,
+    "tied_percent_model": 11.702857142857143,
+    "untied_parameters": 16384000,
+    "untied_percent_model": 23.405714285714286,
+    "vocab_size": 16000
+  },
+  {
+    "hidden_dim_assumed": 512,
+    "model_parameters": 70000000,
+    "tied_parameters": 12288000,
+    "tied_percent_model": 17.554285714285715,
+    "untied_parameters": 24576000,
+    "untied_percent_model": 35.10857142857143,
+    "vocab_size": 24000
+  },
+  {
+    "hidden_dim_assumed": 512,
+    "model_parameters": 70000000,
+    "tied_parameters": 16384000,
+    "tied_percent_model": 23.405714285714286,
+    "untied_parameters": 32768000,
+    "untied_percent_model": 46.81142857142857,
+    "vocab_size": 32000
+  },
+  {
+    "hidden_dim_assumed": 512,
+    "model_parameters": 70000000,
+    "tied_parameters": 24576000,
+    "tied_percent_model": 35.10857142857143,
+    "untied_parameters": 49152000,
+    "untied_percent_model": 70.21714285714286,
+    "vocab_size": 48000
+  },
+  {
+    "hidden_dim_assumed": 512,
+    "model_parameters": 70000000,
+    "tied_parameters": 32768000,
+    "tied_percent_model": 46.81142857142857,
+    "untied_parameters": 65536000,
+    "untied_percent_model": 93.62285714285714,
+    "vocab_size": 64000
+  },
+  {
+    "hidden_dim_assumed": 768,
+    "model_parameters": 150000000,
+    "tied_parameters": 6144000,
+    "tied_percent_model": 4.096,
+    "untied_parameters": 12288000,
+    "untied_percent_model": 8.192,
+    "vocab_size": 8000
+  },
+  {
+    "hidden_dim_assumed": 768,
+    "model_parameters": 150000000,
+    "tied_parameters": 12288000,
+    "tied_percent_model": 8.192,
+    "untied_parameters": 24576000,
+    "untied_percent_model": 16.384,
+    "vocab_size": 16000
+  },
+  {
+    "hidden_dim_assumed": 768,
+    "model_parameters": 150000000,
+    "tied_parameters": 18432000,
+    "tied_percent_model": 12.288,
+    "untied_parameters": 36864000,
+    "untied_percent_model": 24.576,
+    "vocab_size": 24000
+  },
+  {
+    "hidden_dim_assumed": 768,
+    "model_parameters": 150000000,
+    "tied_parameters": 24576000,
+    "tied_percent_model": 16.384,
+    "untied_parameters": 49152000,
+    "untied_percent_model": 32.768,
+    "vocab_size": 32000
+  },
+  {
+    "hidden_dim_assumed": 768,
+    "model_parameters": 150000000,
+    "tied_parameters": 36864000,
+    "tied_percent_model": 24.576,
+    "untied_parameters": 73728000,
+    "untied_percent_model": 49.152,
+    "vocab_size": 48000
+  },
+  {
+    "hidden_dim_assumed": 768,
+    "model_parameters": 150000000,
+    "tied_parameters": 49152000,
+    "tied_percent_model": 32.768,
+    "untied_parameters": 98304000,
+    "untied_percent_model": 65.536,
+    "vocab_size": 64000
+  },
+  {
+    "hidden_dim_assumed": 1024,
+    "model_parameters": 300000000,
+    "tied_parameters": 8192000,
+    "tied_percent_model": 2.7306666666666666,
+    "untied_parameters": 16384000,
+    "untied_percent_model": 5.461333333333333,
+    "vocab_size": 8000
+  },
+  {
+    "hidden_dim_assumed": 1024,
+    "model_parameters": 300000000,
+    "tied_parameters": 16384000,
+    "tied_percent_model": 5.461333333333333,
+    "untied_parameters": 32768000,
+    "untied_percent_model": 10.922666666666666,
+    "vocab_size": 16000
+  },
+  {
+    "hidden_dim_assumed": 1024,
+    "model_parameters": 300000000,
+    "tied_parameters": 24576000,
+    "tied_percent_model": 8.192,
+    "untied_parameters": 49152000,
+    "untied_percent_model": 16.384,
+    "vocab_size": 24000
+  },
+  {
+    "hidden_dim_assumed": 1024,
+    "model_parameters": 300000000,
+    "tied_parameters": 32768000,
+    "tied_percent_model": 10.922666666666666,
+    "untied_parameters": 65536000,
+    "untied_percent_model": 21.845333333333333,
+    "vocab_size": 32000
+  },
+  {
+    "hidden_dim_assumed": 1024,
+    "model_parameters": 300000000,
+    "tied_parameters": 49152000,
+    "tied_percent_model": 16.384,
+    "untied_parameters": 98304000,
+    "untied_percent_model": 32.768,
+    "vocab_size": 48000
+  },
+  {
+    "hidden_dim_assumed": 1024,
+    "model_parameters": 300000000,
+    "tied_parameters": 65536000,
+    "tied_percent_model": 21.845333333333333,
+    "untied_parameters": 131072000,
+    "untied_percent_model": 43.690666666666665,
+    "vocab_size": 64000
+  },
+  {
+    "hidden_dim_assumed": 2048,
+    "model_parameters": 800000000,
+    "tied_parameters": 16384000,
+    "tied_percent_model": 2.048,
+    "untied_parameters": 32768000,
+    "untied_percent_model": 4.096,
+    "vocab_size": 8000
+  },
+  {
+    "hidden_dim_assumed": 2048,
+    "model_parameters": 800000000,
+    "tied_parameters": 32768000,
+    "tied_percent_model": 4.096,
+    "untied_parameters": 65536000,
+    "untied_percent_model": 8.192,
+    "vocab_size": 16000
+  },
+  {
+    "hidden_dim_assumed": 2048,
+    "model_parameters": 800000000,
+    "tied_parameters": 49152000,
+    "tied_percent_model": 6.144,
+    "untied_parameters": 98304000,
+    "untied_percent_model": 12.288,
+    "vocab_size": 24000
+  },
+  {
+    "hidden_dim_assumed": 2048,
+    "model_parameters": 800000000,
+    "tied_parameters": 65536000,
+    "tied_percent_model": 8.192,
+    "untied_parameters": 131072000,
+    "untied_percent_model": 16.384,
+    "vocab_size": 32000
+  },
+  {
+    "hidden_dim_assumed": 2048,
+    "model_parameters": 800000000,
+    "tied_parameters": 98304000,
+    "tied_percent_model": 12.288,
+    "untied_parameters": 196608000,
+    "untied_percent_model": 24.576,
+    "vocab_size": 48000
+  },
+  {
+    "hidden_dim_assumed": 2048,
+    "model_parameters": 800000000,
+    "tied_parameters": 131072000,
+    "tied_percent_model": 16.384,
+    "untied_parameters": 262144000,
+    "untied_percent_model": 32.768,
+    "vocab_size": 64000
+  }
+]

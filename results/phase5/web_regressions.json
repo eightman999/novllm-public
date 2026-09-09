@@ -1,0 +1,434 @@
+[
+  {
+    "candidate": "n-reversible-sp-unigram-8k",
+    "recipe": "N",
+    "vocab_size": 8000,
+    "category": "web_novel",
+    "metric": "characters_per_token",
+    "delta_percent": -2.2104471412373594,
+    "regression_percent": 2.2104471412373594
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-8k",
+    "recipe": "N",
+    "vocab_size": 8000,
+    "category": "web_novel",
+    "metric": "bytes_per_token",
+    "delta_percent": -2.210447141237337,
+    "regression_percent": 2.210447141237337
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-8k",
+    "recipe": "N",
+    "vocab_size": 8000,
+    "category": "web_novel",
+    "metric": "tokens_per_document",
+    "delta_percent": 2.2604123616659644,
+    "regression_percent": 2.2604123616659644
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-8k",
+    "recipe": "N",
+    "vocab_size": 8000,
+    "category": "web_novel",
+    "metric": "token_count_p99",
+    "delta_percent": 1.1716519796450386,
+    "regression_percent": 1.1716519796450386
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-16k",
+    "recipe": "N",
+    "vocab_size": 16000,
+    "category": "web_novel",
+    "metric": "characters_per_token",
+    "delta_percent": -2.775888399789528,
+    "regression_percent": 2.775888399789528
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-16k",
+    "recipe": "N",
+    "vocab_size": 16000,
+    "category": "web_novel",
+    "metric": "bytes_per_token",
+    "delta_percent": -2.775888399789528,
+    "regression_percent": 2.775888399789528
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-16k",
+    "recipe": "N",
+    "vocab_size": 16000,
+    "category": "web_novel",
+    "metric": "tokens_per_document",
+    "delta_percent": 2.8551440111935333,
+    "regression_percent": 2.8551440111935333
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-16k",
+    "recipe": "N",
+    "vocab_size": 16000,
+    "category": "web_novel",
+    "metric": "token_count_p99",
+    "delta_percent": 0.9331882979332518,
+    "regression_percent": 0.9331882979332518
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-24k",
+    "recipe": "N",
+    "vocab_size": 24000,
+    "category": "web_novel",
+    "metric": "characters_per_token",
+    "delta_percent": -0.5765650615465745,
+    "regression_percent": 0.5765650615465745
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-24k",
+    "recipe": "N",
+    "vocab_size": 24000,
+    "category": "web_novel",
+    "metric": "bytes_per_token",
+    "delta_percent": -0.5765650615465856,
+    "regression_percent": 0.5765650615465856
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-24k",
+    "recipe": "N",
+    "vocab_size": 24000,
+    "category": "web_novel",
+    "metric": "tokens_per_document",
+    "delta_percent": 0.5799086119922192,
+    "regression_percent": 0.5799086119922192
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-24k",
+    "recipe": "N",
+    "vocab_size": 24000,
+    "category": "web_novel",
+    "metric": "token_count_p99",
+    "delta_percent": -0.20077877829155488,
+    "regression_percent": -0.20077877829155488
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-32k",
+    "recipe": "N",
+    "vocab_size": 32000,
+    "category": "web_novel",
+    "metric": "characters_per_token",
+    "delta_percent": -0.8465791292328939,
+    "regression_percent": 0.8465791292328939
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-32k",
+    "recipe": "N",
+    "vocab_size": 32000,
+    "category": "web_novel",
+    "metric": "bytes_per_token",
+    "delta_percent": -0.8465791292328939,
+    "regression_percent": 0.8465791292328939
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-32k",
+    "recipe": "N",
+    "vocab_size": 32000,
+    "category": "web_novel",
+    "metric": "tokens_per_document",
+    "delta_percent": 0.8538072834988641,
+    "regression_percent": 0.8538072834988641
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-32k",
+    "recipe": "N",
+    "vocab_size": 32000,
+    "category": "web_novel",
+    "metric": "token_count_p99",
+    "delta_percent": 0.9622993890665121,
+    "regression_percent": 0.9622993890665121
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-48k",
+    "recipe": "N",
+    "vocab_size": 48000,
+    "category": "web_novel",
+    "metric": "characters_per_token",
+    "delta_percent": -0.08891477978262285,
+    "regression_percent": 0.08891477978262285
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-48k",
+    "recipe": "N",
+    "vocab_size": 48000,
+    "category": "web_novel",
+    "metric": "bytes_per_token",
+    "delta_percent": -0.08891477978262285,
+    "regression_percent": 0.08891477978262285
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-48k",
+    "recipe": "N",
+    "vocab_size": 48000,
+    "category": "web_novel",
+    "metric": "tokens_per_document",
+    "delta_percent": 0.08899390852039613,
+    "regression_percent": 0.08899390852039613
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-48k",
+    "recipe": "N",
+    "vocab_size": 48000,
+    "category": "web_novel",
+    "metric": "token_count_p99",
+    "delta_percent": -0.9320993797061083,
+    "regression_percent": -0.9320993797061083
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-64k",
+    "recipe": "N",
+    "vocab_size": 64000,
+    "category": "web_novel",
+    "metric": "characters_per_token",
+    "delta_percent": -1.3696235918458255,
+    "regression_percent": 1.3696235918458255
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-64k",
+    "recipe": "N",
+    "vocab_size": 64000,
+    "category": "web_novel",
+    "metric": "bytes_per_token",
+    "delta_percent": -1.3696235918458144,
+    "regression_percent": 1.3696235918458144
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-64k",
+    "recipe": "N",
+    "vocab_size": 64000,
+    "category": "web_novel",
+    "metric": "tokens_per_document",
+    "delta_percent": 1.3886427708417193,
+    "regression_percent": 1.3886427708417193
+  },
+  {
+    "candidate": "n-reversible-sp-unigram-64k",
+    "recipe": "N",
+    "vocab_size": 64000,
+    "category": "web_novel",
+    "metric": "token_count_p99",
+    "delta_percent": 1.3539921831379198,
+    "regression_percent": 1.3539921831379198
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-8k",
+    "recipe": "J",
+    "vocab_size": 8000,
+    "category": "web_novel",
+    "metric": "characters_per_token",
+    "delta_percent": -17.978945782565305,
+    "regression_percent": 17.978945782565305
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-8k",
+    "recipe": "J",
+    "vocab_size": 8000,
+    "category": "web_novel",
+    "metric": "bytes_per_token",
+    "delta_percent": -17.97894578256529,
+    "regression_percent": 17.97894578256529
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-8k",
+    "recipe": "J",
+    "vocab_size": 8000,
+    "category": "web_novel",
+    "metric": "tokens_per_document",
+    "delta_percent": 21.91991550718648,
+    "regression_percent": 21.91991550718648
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-8k",
+    "recipe": "J",
+    "vocab_size": 8000,
+    "category": "web_novel",
+    "metric": "token_count_p99",
+    "delta_percent": 19.823755740350002,
+    "regression_percent": 19.823755740350002
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-16k",
+    "recipe": "J",
+    "vocab_size": 16000,
+    "category": "web_novel",
+    "metric": "characters_per_token",
+    "delta_percent": -6.684732401305659,
+    "regression_percent": 6.684732401305659
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-16k",
+    "recipe": "J",
+    "vocab_size": 16000,
+    "category": "web_novel",
+    "metric": "bytes_per_token",
+    "delta_percent": -6.684732401305649,
+    "regression_percent": 6.684732401305649
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-16k",
+    "recipe": "J",
+    "vocab_size": 16000,
+    "category": "web_novel",
+    "metric": "tokens_per_document",
+    "delta_percent": 7.1635998838406545,
+    "regression_percent": 7.1635998838406545
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-16k",
+    "recipe": "J",
+    "vocab_size": 16000,
+    "category": "web_novel",
+    "metric": "token_count_p99",
+    "delta_percent": 6.180225568214337,
+    "regression_percent": 6.180225568214337
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-24k",
+    "recipe": "J",
+    "vocab_size": 24000,
+    "category": "web_novel",
+    "metric": "characters_per_token",
+    "delta_percent": -2.2002651251144534,
+    "regression_percent": 2.2002651251144534
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-24k",
+    "recipe": "J",
+    "vocab_size": 24000,
+    "category": "web_novel",
+    "metric": "bytes_per_token",
+    "delta_percent": -2.2002651251144534,
+    "regression_percent": 2.2002651251144534
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-24k",
+    "recipe": "J",
+    "vocab_size": 24000,
+    "category": "web_novel",
+    "metric": "tokens_per_document",
+    "delta_percent": 2.2497659404999704,
+    "regression_percent": 2.2497659404999704
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-24k",
+    "recipe": "J",
+    "vocab_size": 24000,
+    "category": "web_novel",
+    "metric": "token_count_p99",
+    "delta_percent": 2.278534923339004,
+    "regression_percent": 2.278534923339004
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-32k",
+    "recipe": "J",
+    "vocab_size": 32000,
+    "category": "web_novel",
+    "metric": "characters_per_token",
+    "delta_percent": -1.905820015383286,
+    "regression_percent": 1.905820015383286
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-32k",
+    "recipe": "J",
+    "vocab_size": 32000,
+    "category": "web_novel",
+    "metric": "bytes_per_token",
+    "delta_percent": -1.9058200153832972,
+    "regression_percent": 1.9058200153832972
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-32k",
+    "recipe": "J",
+    "vocab_size": 32000,
+    "category": "web_novel",
+    "metric": "tokens_per_document",
+    "delta_percent": 1.9428471859208818,
+    "regression_percent": 1.9428471859208818
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-32k",
+    "recipe": "J",
+    "vocab_size": 32000,
+    "category": "web_novel",
+    "metric": "token_count_p99",
+    "delta_percent": 2.215820961666304,
+    "regression_percent": 2.215820961666304
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-48k",
+    "recipe": "J",
+    "vocab_size": 48000,
+    "category": "web_novel",
+    "metric": "characters_per_token",
+    "delta_percent": -0.20212847408314083,
+    "regression_percent": 0.20212847408314083
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-48k",
+    "recipe": "J",
+    "vocab_size": 48000,
+    "category": "web_novel",
+    "metric": "bytes_per_token",
+    "delta_percent": -0.20212847408315193,
+    "regression_percent": 0.20212847408315193
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-48k",
+    "recipe": "J",
+    "vocab_size": 48000,
+    "category": "web_novel",
+    "metric": "tokens_per_document",
+    "delta_percent": 0.20253786077055747,
+    "regression_percent": 0.20253786077055747
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-48k",
+    "recipe": "J",
+    "vocab_size": 48000,
+    "category": "web_novel",
+    "metric": "token_count_p99",
+    "delta_percent": -0.4080007960991172,
+    "regression_percent": -0.4080007960991172
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-64k",
+    "recipe": "J",
+    "vocab_size": 64000,
+    "category": "web_novel",
+    "metric": "characters_per_token",
+    "delta_percent": -1.5682481288849415,
+    "regression_percent": 1.5682481288849415
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-64k",
+    "recipe": "J",
+    "vocab_size": 64000,
+    "category": "web_novel",
+    "metric": "bytes_per_token",
+    "delta_percent": -1.5682481288849415,
+    "regression_percent": 1.5682481288849415
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-64k",
+    "recipe": "J",
+    "vocab_size": 64000,
+    "category": "web_novel",
+    "metric": "tokens_per_document",
+    "delta_percent": 1.593233991139753,
+    "regression_percent": 1.593233991139753
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-64k",
+    "recipe": "J",
+    "vocab_size": 64000,
+    "category": "web_novel",
+    "metric": "token_count_p99",
+    "delta_percent": 1.5040480178671212,
+    "regression_percent": 1.5040480178671212
+  }
+]

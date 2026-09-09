@@ -1,0 +1,5 @@
+candidate,recipe,vocab_size,cultural_chars_per_token_mean,web_regression_percent
+n-reversible-sp-unigram-24k,N,24000,2.074924872845485,0.5765650615465745
+n-reversible-sp-unigram-32k,N,32000,2.16103838614243,0.8465791292328939
+j-reversible-sp-unigram-32k,J,32000,2.2032685120441036,1.905820015383286
+j-reversible-sp-unigram-48k,J,48000,2.3647909714220683,0.20212847408314083

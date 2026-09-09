@@ -1,0 +1,677 @@
+[
+  {
+    "recipe": "W",
+    "category": "web_novel",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.25549130654032126,
+    "delta_cpt_per_million_tied_parameters": 0.041583871507213745,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_shin_shin",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.1587149101085732,
+    "delta_cpt_per_million_tied_parameters": 0.02583250490048392,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.11123459893416032,
+    "delta_cpt_per_million_tied_parameters": 0.01810458967027349,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.0843995704915681,
+    "delta_cpt_per_million_tied_parameters": 0.013736909259695328,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "aa",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.30091990787944867,
+    "delta_cpt_per_million_tied_parameters": 0.04897784958975401,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "web_novel",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.11494279010599073,
+    "delta_cpt_per_million_tied_parameters": 0.01870813641048026,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_shin_shin",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.07554484323227073,
+    "delta_cpt_per_million_tied_parameters": 0.012295710161502398,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.04925583724093485,
+    "delta_cpt_per_million_tied_parameters": 0.008016900592600074,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.03508354122060897,
+    "delta_cpt_per_million_tied_parameters": 0.005710211787208492,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "aa",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.1590153324909478,
+    "delta_cpt_per_million_tied_parameters": 0.0258814017726152,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "web_novel",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.08123058283383688,
+    "delta_cpt_per_million_tied_parameters": 0.013221123508111473,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_shin_shin",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.059654301815838195,
+    "delta_cpt_per_million_tied_parameters": 0.009709359019504914,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.04434937135118111,
+    "delta_cpt_per_million_tied_parameters": 0.007218322160022967,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.028812378897178803,
+    "delta_cpt_per_million_tied_parameters": 0.004689514794462696,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "aa",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.11729649200551773,
+    "delta_cpt_per_million_tied_parameters": 0.019091225912356402,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "W",
+    "category": "web_novel",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.12229144264758451,
+    "delta_cpt_per_million_tied_parameters": 0.009952103080044312,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_shin_shin",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.08994694087589439,
+    "delta_cpt_per_million_tied_parameters": 0.007319900787426301,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.06043607476924473,
+    "delta_cpt_per_million_tied_parameters": 0.004918300355570046,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.04313440307916627,
+    "delta_cpt_per_million_tied_parameters": 0.003510286708916526,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "W",
+    "category": "aa",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.17072778788560283,
+    "delta_cpt_per_million_tied_parameters": 0.013893862946419502,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "W",
+    "category": "web_novel",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.11375324162014255,
+    "delta_cpt_per_million_tied_parameters": 0.009257262501639205,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_shin_shin",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.06551917603688073,
+    "delta_cpt_per_million_tied_parameters": 0.005331964195709695,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.041658175838268585,
+    "delta_cpt_per_million_tied_parameters": 0.0033901510285049303,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "W",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.02876781792080374,
+    "delta_cpt_per_million_tied_parameters": 0.0023411310156904084,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "W",
+    "category": "aa",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.11655369845288632,
+    "delta_cpt_per_million_tied_parameters": 0.0094851642621164,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "N",
+    "category": "web_novel",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.2387565061617174,
+    "delta_cpt_per_million_tied_parameters": 0.03886010842475869,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_shin_shin",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.256354763049619,
+    "delta_cpt_per_million_tied_parameters": 0.041724408048440596,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.2240149764833026,
+    "delta_cpt_per_million_tied_parameters": 0.036460770911995864,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.1963878090983009,
+    "delta_cpt_per_million_tied_parameters": 0.031964161637093244,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "aa",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.3182824102512758,
+    "delta_cpt_per_million_tied_parameters": 0.051803777710168586,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "web_novel",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.15740489962733717,
+    "delta_cpt_per_million_tied_parameters": 0.02561928704872024,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_shin_shin",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.16735557680396584,
+    "delta_cpt_per_million_tied_parameters": 0.027238863412103815,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.16003921743588267,
+    "delta_cpt_per_million_tied_parameters": 0.02604804971287153,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.1488999420699264,
+    "delta_cpt_per_million_tied_parameters": 0.02423501661294375,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "aa",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.19355583724101377,
+    "delta_cpt_per_million_tied_parameters": 0.031503228717612915,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "web_novel",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.07493804305519669,
+    "delta_cpt_per_million_tied_parameters": 0.012196947111848419,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_shin_shin",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.09097949661889881,
+    "delta_cpt_per_million_tied_parameters": 0.014807860777815561,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.07517496885880948,
+    "delta_cpt_per_million_tied_parameters": 0.012235509254363522,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.06825992859705932,
+    "delta_cpt_per_million_tied_parameters": 0.011110014420094289,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "aa",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.11003965911301261,
+    "delta_cpt_per_million_tied_parameters": 0.017910100767091895,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "N",
+    "category": "web_novel",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.13852549713364093,
+    "delta_cpt_per_million_tied_parameters": 0.011273233816214269,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_shin_shin",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.15108487470709608,
+    "delta_cpt_per_million_tied_parameters": 0.012295318579679044,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.13706934748118194,
+    "delta_cpt_per_million_tied_parameters": 0.011154732054132645,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.12388274325482596,
+    "delta_cpt_per_million_tied_parameters": 0.010081603454982581,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "N",
+    "category": "aa",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.16541531391971498,
+    "delta_cpt_per_million_tied_parameters": 0.013461532708310138,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "N",
+    "category": "web_novel",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.08300421535437597,
+    "delta_cpt_per_million_tied_parameters": 0.006754900338083981,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_shin_shin",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.11229928458857064,
+    "delta_cpt_per_million_tied_parameters": 0.009138939175502167,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.09194917420575832,
+    "delta_cpt_per_million_tied_parameters": 0.007482842952942571,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "N",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.08064622900801366,
+    "delta_cpt_per_million_tied_parameters": 0.006563006917969861,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "N",
+    "category": "aa",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.1155298551815589,
+    "delta_cpt_per_million_tied_parameters": 0.009401843683395092,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "J",
+    "category": "web_novel",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.4310161537205568,
+    "delta_cpt_per_million_tied_parameters": 0.07015236876962187,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_shin_shin",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.5031932608333343,
+    "delta_cpt_per_million_tied_parameters": 0.08189994479709216,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.3910750508344738,
+    "delta_cpt_per_million_tied_parameters": 0.0636515382217568,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.383099866324242,
+    "delta_cpt_per_million_tied_parameters": 0.062353493867877925,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "aa",
+    "from_vocab": 8000,
+    "to_vocab": 16000,
+    "delta_chars_per_token": 0.5899777507605164,
+    "delta_cpt_per_million_tied_parameters": 0.09602502453784446,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "web_novel",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.20034619269230425,
+    "delta_cpt_per_million_tied_parameters": 0.03260842980017973,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_shin_shin",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.21916534364786022,
+    "delta_cpt_per_million_tied_parameters": 0.03567144265101892,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.2092017476196555,
+    "delta_cpt_per_million_tied_parameters": 0.03404976360996997,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.1963872359653609,
+    "delta_cpt_per_million_tied_parameters": 0.03196406835373712,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "aa",
+    "from_vocab": 16000,
+    "to_vocab": 24000,
+    "delta_chars_per_token": 0.2530348593728018,
+    "delta_cpt_per_million_tied_parameters": 0.041184059142708625,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "web_novel",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.08579446386533895,
+    "delta_cpt_per_million_tied_parameters": 0.013963942686415844,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_shin_shin",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.09946997914709677,
+    "delta_cpt_per_million_tied_parameters": 0.016189775251806114,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.0929317959270266,
+    "delta_cpt_per_million_tied_parameters": 0.015125617826664486,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.09757100470662605,
+    "delta_cpt_per_million_tied_parameters": 0.01588069738063575,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "aa",
+    "from_vocab": 24000,
+    "to_vocab": 32000,
+    "delta_chars_per_token": 0.07939521308302622,
+    "delta_cpt_per_million_tied_parameters": 0.012922397962732132,
+    "delta_tied_parameters_at_hidden_768": 6144000
+  },
+  {
+    "recipe": "J",
+    "category": "web_novel",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.15879281508818988,
+    "delta_cpt_per_million_tied_parameters": 0.01292259237371337,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_shin_shin",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.16178376190283794,
+    "delta_cpt_per_million_tied_parameters": 0.013165996248603347,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.14597313584869864,
+    "delta_cpt_per_million_tied_parameters": 0.011879324206437064,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.14006370456879136,
+    "delta_cpt_per_million_tied_parameters": 0.011398413457746693,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "J",
+    "category": "aa",
+    "from_vocab": 32000,
+    "to_vocab": 48000,
+    "delta_chars_per_token": 0.19826923519153006,
+    "delta_cpt_per_million_tied_parameters": 0.01613519166597738,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "J",
+    "category": "web_novel",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.08083151489818885,
+    "delta_cpt_per_million_tied_parameters": 0.006578085522313546,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_shin_shin",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.11021241944596127,
+    "delta_cpt_per_million_tied_parameters": 0.008969109655433046,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_shin_kyu",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.09288548057542334,
+    "delta_cpt_per_million_tied_parameters": 0.007559039760369738,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "J",
+    "category": "aozora_kyu_kyu",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.09054440169495459,
+    "delta_cpt_per_million_tied_parameters": 0.007368522273352424,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  },
+  {
+    "recipe": "J",
+    "category": "aa",
+    "from_vocab": 48000,
+    "to_vocab": 64000,
+    "delta_chars_per_token": 0.11330972047193999,
+    "delta_cpt_per_million_tied_parameters": 0.00922116865819824,
+    "delta_tied_parameters_at_hidden_768": 12288000
+  }
+]
