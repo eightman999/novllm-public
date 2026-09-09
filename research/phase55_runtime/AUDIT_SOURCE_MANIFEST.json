@@ -1,0 +1,26 @@
+[
+  {
+    "path": "canonical_corpus/phase551_audit.py",
+    "sha256": "8d545e87d4af75d41f441120fb19422c355facfb6b702718dab51fdaa45b0e78"
+  },
+  {
+    "path": "canonical_corpus/scale_special.py",
+    "sha256": "5399e1dc0f7904ffad1bc58ed07d7418dda00346a34fc84e1ee0a8c8acee83a6"
+  },
+  {
+    "path": "canonical_corpus/cultural_store.py",
+    "sha256": "53b4dc009461c104dcd5aff71caf6c6a626f286a107112206cb46d6380771725"
+  },
+  {
+    "path": "canonical_corpus/cultural_registry.py",
+    "sha256": "af88f6d62583c559cdf7b21b65f4ed642a231a5a24e366d9f39050892da12312"
+  },
+  {
+    "path": "scripts/run_phase551_audit.py",
+    "sha256": "03ffc0855c81a52f53158747c2688ad534551bb14ffe4069a4d71601892c8be7"
+  },
+  {
+    "path": "scripts/eval_phase551_checkpoints.py",
+    "sha256": "bd7c45cefc9537fa46f16be0fa253ec465b33db5b1818a9491508c820fa313a6"
+  }
+]
