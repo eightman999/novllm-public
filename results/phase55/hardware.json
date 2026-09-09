@@ -1,0 +1,42 @@
+[
+  {
+    "candidate": "j-reversible-sp-unigram-32k",
+    "seed": 1,
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "dtype": "float32",
+    "python": "3.14.4",
+    "torch": "2.13.0+cu126",
+    "cuda": null,
+    "cuda_note": "null means not independently recorded; torch build suffix retained"
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-48k",
+    "seed": 1,
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "dtype": "float32",
+    "python": "3.14.4",
+    "torch": "2.13.0+cu126",
+    "cuda": null,
+    "cuda_note": "null means not independently recorded; torch build suffix retained"
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-32k",
+    "seed": 2,
+    "gpu": "Tesla P100-PCIE-16GB",
+    "dtype": "float32",
+    "python": "3.14.4",
+    "torch": "2.13.0+cu126",
+    "cuda": null,
+    "cuda_note": "null means not independently recorded; torch build suffix retained"
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-48k",
+    "seed": 2,
+    "gpu": "Tesla P100-PCIE-16GB",
+    "dtype": "float32",
+    "python": "3.14.4",
+    "torch": "2.13.0+cu126",
+    "cuda": null,
+    "cuda_note": "null means not independently recorded; torch build suffix retained"
+  }
+]

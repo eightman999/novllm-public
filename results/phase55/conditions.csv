@@ -1,0 +1,5 @@
+candidate,seed,batch_size,decode_steps,deterministic_algorithms,gradient_clip,is_smoke,learning_rate,retain_curve_checkpoints,sequence_length,source_char_budget,threads,total_steps,verify_resume,warmup_source_chars,warmup_steps,weight_decay,scheduler_axis,regime
+j-reversible-sp-unigram-32k,1,1,8,True,1.0,False,0.0003,True,4096,30000000,2,1000000,True,300000,0,0.01,source_chars,same_source_characters
+j-reversible-sp-unigram-48k,1,1,8,True,1.0,False,0.0003,True,4096,30000000,2,1000000,True,300000,0,0.01,source_chars,same_source_characters
+j-reversible-sp-unigram-32k,2,1,8,True,1.0,False,0.0003,True,4096,30000000,2,1000000,True,300000,0,0.01,source_chars,same_source_characters
+j-reversible-sp-unigram-48k,2,1,8,True,1.0,False,0.0003,True,4096,30000000,2,1000000,True,300000,0,0.01,source_chars,same_source_characters

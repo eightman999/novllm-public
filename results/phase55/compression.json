@@ -1,0 +1,46 @@
+[
+  {
+    "candidate": "j-reversible-sp-unigram-32k",
+    "seed": 1,
+    "source_chars": 30000000,
+    "source_bytes": 84611719,
+    "tokens": 12492649,
+    "chars_per_token": 2.4014122224998076,
+    "bytes_per_token": 6.772920539110641,
+    "token_ratio_to_j32": 1.0,
+    "token_ratio_to_j48": 1.0826554810789524
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-48k",
+    "seed": 1,
+    "source_chars": 30000000,
+    "source_bytes": 84611719,
+    "tokens": 11538896,
+    "chars_per_token": 2.5999021050194058,
+    "bytes_per_token": 7.332739544580348,
+    "token_ratio_to_j32": 0.9236548629518047,
+    "token_ratio_to_j48": 1.0
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-32k",
+    "seed": 2,
+    "source_chars": 30000000,
+    "source_bytes": 84611719,
+    "tokens": 12492649,
+    "chars_per_token": 2.4014122224998076,
+    "bytes_per_token": 6.772920539110641,
+    "token_ratio_to_j32": 1.0,
+    "token_ratio_to_j48": 1.0826554810789524
+  },
+  {
+    "candidate": "j-reversible-sp-unigram-48k",
+    "seed": 2,
+    "source_chars": 30000000,
+    "source_bytes": 84611719,
+    "tokens": 11538896,
+    "chars_per_token": 2.5999021050194058,
+    "bytes_per_token": 7.332739544580348,
+    "token_ratio_to_j32": 0.9236548629518047,
+    "token_ratio_to_j48": 1.0
+  }
+]

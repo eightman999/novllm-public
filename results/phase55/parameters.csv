@@ -1,0 +1,5 @@
+candidate,seed,total,embedding,non_embedding,lm_head,embedding_ratio,vocab_size,hidden_size,num_layers,num_heads,num_kv_heads,ffn_size,context_length,bos_id,eos_id,pad_id,tie_embeddings,activation,norm,positional_encoding
+j-reversible-sp-unigram-32k,1,150007296,24576000,125431296,0,0.16383203121000195,32000,768,12,12,12,5267,4096,1,2,2,True,gelu,layernorm,sinusoidal
+j-reversible-sp-unigram-48k,1,150001152,36864000,113137152,0,0.2457581125776954,48000,768,12,12,12,4600,4096,1,2,2,True,gelu,layernorm,sinusoidal
+j-reversible-sp-unigram-32k,2,150007296,24576000,125431296,0,0.16383203121000195,32000,768,12,12,12,5267,4096,1,2,2,True,gelu,layernorm,sinusoidal
+j-reversible-sp-unigram-48k,2,150001152,36864000,113137152,0,0.2457581125776954,48000,768,12,12,12,4600,4096,1,2,2,True,gelu,layernorm,sinusoidal

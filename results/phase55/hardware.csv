@@ -1,0 +1,5 @@
+candidate,seed,gpu,dtype,python,torch,cuda,cuda_note
+j-reversible-sp-unigram-32k,1,NVIDIA GeForce RTX 3060,float32,3.14.4,2.13.0+cu126,,null means not independently recorded; torch build suffix retained
+j-reversible-sp-unigram-48k,1,NVIDIA GeForce RTX 3060,float32,3.14.4,2.13.0+cu126,,null means not independently recorded; torch build suffix retained
+j-reversible-sp-unigram-32k,2,Tesla P100-PCIE-16GB,float32,3.14.4,2.13.0+cu126,,null means not independently recorded; torch build suffix retained
+j-reversible-sp-unigram-48k,2,Tesla P100-PCIE-16GB,float32,3.14.4,2.13.0+cu126,,null means not independently recorded; torch build suffix retained
