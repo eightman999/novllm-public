@@ -1,0 +1,189 @@
+[
+  {
+    "partition": "old",
+    "category": "aa",
+    "documents": 96,
+    "characters": 468245,
+    "bytes": 1303291,
+    "known_works": 26,
+    "unknown_work_documents": 0,
+    "max_work_character_fraction": 0.1325182329763265,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "old",
+    "category": "aozora_kyu_kyu",
+    "documents": 15,
+    "characters": 98589,
+    "bytes": 283524,
+    "known_works": 15,
+    "unknown_work_documents": 0,
+    "max_work_character_fraction": 0.22556268954954406,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "old",
+    "category": "aozora_shin_kyu",
+    "documents": 51,
+    "characters": 363135,
+    "bytes": 1049668,
+    "known_works": 51,
+    "unknown_work_documents": 0,
+    "max_work_character_fraction": 0.2392471119556088,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "old",
+    "category": "aozora_shin_shin",
+    "documents": 37,
+    "characters": 500000,
+    "bytes": 1454404,
+    "known_works": 37,
+    "unknown_work_documents": 0,
+    "max_work_character_fraction": 0.224534,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "old",
+    "category": "gyaru",
+    "documents": 13,
+    "characters": 211,
+    "bytes": 547,
+    "known_works": 0,
+    "unknown_work_documents": 13,
+    "max_work_character_fraction": 1.0,
+    "exact_duplicate_extra_records": 1
+  },
+  {
+    "partition": "old",
+    "category": "historical_kana",
+    "documents": 1,
+    "characters": 11,
+    "bytes": 33,
+    "known_works": 0,
+    "unknown_work_documents": 1,
+    "max_work_character_fraction": 1.0,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "old",
+    "category": "kakikudashi",
+    "documents": 690,
+    "characters": 7344,
+    "bytes": 22032,
+    "known_works": 93,
+    "unknown_work_documents": 0,
+    "max_work_character_fraction": 0.10117102396514162,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "old",
+    "category": "kanbun",
+    "documents": 690,
+    "characters": 4292,
+    "bytes": 12876,
+    "known_works": 93,
+    "unknown_work_documents": 0,
+    "max_work_character_fraction": 0.11090400745573159,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "old",
+    "category": "old_orthography",
+    "documents": 1,
+    "characters": 13,
+    "bytes": 39,
+    "known_works": 0,
+    "unknown_work_documents": 1,
+    "max_work_character_fraction": 1.0,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "old",
+    "category": "technical",
+    "documents": 2,
+    "characters": 34542,
+    "bytes": 54848,
+    "known_works": 0,
+    "unknown_work_documents": 2,
+    "max_work_character_fraction": 1.0,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "old",
+    "category": "unicode_edge",
+    "documents": 14,
+    "characters": 70,
+    "bytes": 137,
+    "known_works": 0,
+    "unknown_work_documents": 14,
+    "max_work_character_fraction": 1.0,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "old",
+    "category": "web_novel",
+    "documents": 25,
+    "characters": 148523,
+    "bytes": 394980,
+    "known_works": 25,
+    "unknown_work_documents": 0,
+    "max_work_character_fraction": 0.12180605024137675,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "old",
+    "category": "whitespace",
+    "documents": 2,
+    "characters": 34,
+    "bytes": 46,
+    "known_works": 0,
+    "unknown_work_documents": 2,
+    "max_work_character_fraction": 1.0,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "candidates",
+    "category": "kakikudashi",
+    "documents": 3421,
+    "characters": 35411,
+    "bytes": 106233,
+    "known_works": 465,
+    "unknown_work_documents": 0,
+    "max_work_character_fraction": 0.027307898675552795,
+    "exact_duplicate_extra_records": 1
+  },
+  {
+    "partition": "candidates",
+    "category": "kanbun",
+    "documents": 3421,
+    "characters": 20703,
+    "bytes": 62109,
+    "known_works": 465,
+    "unknown_work_documents": 0,
+    "max_work_character_fraction": 0.029657537554943728,
+    "exact_duplicate_extra_records": 1
+  },
+  {
+    "partition": "hardened",
+    "category": "kakikudashi",
+    "documents": 3384,
+    "characters": 35069,
+    "bytes": 105207,
+    "known_works": 457,
+    "unknown_work_documents": 0,
+    "max_work_character_fraction": 0.027574210841483933,
+    "exact_duplicate_extra_records": 0
+  },
+  {
+    "partition": "hardened",
+    "category": "kanbun",
+    "documents": 3384,
+    "characters": 20492,
+    "bytes": 61476,
+    "known_works": 457,
+    "unknown_work_documents": 0,
+    "max_work_character_fraction": 0.02996291235604138,
+    "exact_duplicate_extra_records": 0
+  }
+]

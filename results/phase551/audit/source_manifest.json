@@ -1,0 +1,42 @@
+{
+  "source": "https://github.com/nlp-waseda/Kanbun-LM",
+  "files": [
+    {
+      "split": "train",
+      "url": "https://raw.githubusercontent.com/nlp-waseda/Kanbun-LM/9f9edf0d17072d31ede9d7d9f0904967c9dbf69d/kanbun-lm-dataset/train.csv",
+      "sha256": "7f5afea5be8362bea95649fd4c46a4eab7dd3fcb34844f0e2b3e48eb1caa0742",
+      "bytes": 180577
+    },
+    {
+      "split": "val",
+      "url": "https://raw.githubusercontent.com/nlp-waseda/Kanbun-LM/9f9edf0d17072d31ede9d7d9f0904967c9dbf69d/kanbun-lm-dataset/val.csv",
+      "sha256": "bf0f140e6b1c8e45de5119112fe409c295fb854f0d5859ae451040e1a08a380e",
+      "bytes": 21771
+    },
+    {
+      "split": "test",
+      "url": "https://raw.githubusercontent.com/nlp-waseda/Kanbun-LM/9f9edf0d17072d31ede9d7d9f0904967c9dbf69d/kanbun-lm-dataset/test.csv",
+      "sha256": "a63fb55fb1b5a8f828808d04df9482a2e24fc7150c7294937c123951620c09d3",
+      "bytes": 24547
+    }
+  ],
+  "rights": "unknown; no redistribution grant located; text excluded from public artifacts",
+  "preprocessing": "existing scale_special.audit_kanbun CSV import; preserve columns, split and row order; no text normalization",
+  "canonical_sha256": "e85ed3e28c2c3c5fdfd7555f9fb1e540e18e5fc27f9650e3333b144419835f74",
+  "revision": "9f9edf0d17072d31ede9d7d9f0904967c9dbf69d",
+  "reproduction_check": {
+    "official_commit_download": true,
+    "all_three_csv_hashes_matched": true,
+    "canonical_byte_hash_matched": true,
+    "verified_on": "2026-09-09"
+  },
+  "rights_inspection": {
+    "date": "2026-09-09",
+    "repository_tree_revision": "9f9edf0d17072d31ede9d7d9f0904967c9dbf69d",
+    "recursive_tree_truncated": false,
+    "license_copying_readme_paths": [
+      "README.md"
+    ],
+    "explicit_redistribution_grant_located": false
+  }
+}

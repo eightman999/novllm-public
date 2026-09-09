@@ -1,0 +1,178 @@
+[
+  {
+    "dataset": "old",
+    "seed": 1,
+    "candidate": "j-reversible-sp-unigram-32k",
+    "category": "kanbun",
+    "bits_per_byte": 5.245909320843615,
+    "nll_sum": 46819.54709815979,
+    "tokens": 4675,
+    "source_chars": 4292,
+    "source_bytes": 12876
+  },
+  {
+    "dataset": "old",
+    "seed": 1,
+    "candidate": "j-reversible-sp-unigram-32k",
+    "category": "kakikudashi",
+    "bits_per_byte": 3.8166862206969006,
+    "nll_sum": 58286.21325445175,
+    "tokens": 6309,
+    "source_chars": 7344,
+    "source_bytes": 22032
+  },
+  {
+    "dataset": "old",
+    "seed": 1,
+    "candidate": "j-reversible-sp-unigram-48k",
+    "category": "kanbun",
+    "bits_per_byte": 5.325430818697347,
+    "nll_sum": 47529.27353191376,
+    "tokens": 4633,
+    "source_chars": 4292,
+    "source_bytes": 12876
+  },
+  {
+    "dataset": "old",
+    "seed": 1,
+    "candidate": "j-reversible-sp-unigram-48k",
+    "category": "kakikudashi",
+    "bits_per_byte": 3.8457325142010133,
+    "nll_sum": 58729.791363716125,
+    "tokens": 6098,
+    "source_chars": 7344,
+    "source_bytes": 22032
+  },
+  {
+    "dataset": "old",
+    "seed": 2,
+    "candidate": "j-reversible-sp-unigram-32k",
+    "category": "kanbun",
+    "bits_per_byte": 5.258579089165376,
+    "nll_sum": 46932.624312877655,
+    "tokens": 4675,
+    "source_chars": 4292,
+    "source_bytes": 12876
+  },
+  {
+    "dataset": "old",
+    "seed": 2,
+    "candidate": "j-reversible-sp-unigram-32k",
+    "category": "kakikudashi",
+    "bits_per_byte": 3.8236539092027053,
+    "nll_sum": 58392.61974287033,
+    "tokens": 6309,
+    "source_chars": 7344,
+    "source_bytes": 22032
+  },
+  {
+    "dataset": "old",
+    "seed": 2,
+    "candidate": "j-reversible-sp-unigram-48k",
+    "category": "kanbun",
+    "bits_per_byte": 5.365920405575414,
+    "nll_sum": 47890.641600608826,
+    "tokens": 4633,
+    "source_chars": 4292,
+    "source_bytes": 12876
+  },
+  {
+    "dataset": "old",
+    "seed": 2,
+    "candidate": "j-reversible-sp-unigram-48k",
+    "category": "kakikudashi",
+    "bits_per_byte": 3.855089249243043,
+    "nll_sum": 58872.681982040405,
+    "tokens": 6098,
+    "source_chars": 7344,
+    "source_bytes": 22032
+  },
+  {
+    "dataset": "hardened",
+    "seed": 1,
+    "candidate": "j-reversible-sp-unigram-32k",
+    "category": "kanbun",
+    "bits_per_byte": 5.285414308059779,
+    "nll_sum": 225221.63090133667,
+    "tokens": 22498,
+    "source_chars": 20492,
+    "source_bytes": 61476
+  },
+  {
+    "dataset": "hardened",
+    "seed": 1,
+    "candidate": "j-reversible-sp-unigram-32k",
+    "category": "kakikudashi",
+    "bits_per_byte": 3.833037046548096,
+    "nll_sum": 279520.1460647583,
+    "tokens": 30169,
+    "source_chars": 35069,
+    "source_bytes": 105207
+  },
+  {
+    "dataset": "hardened",
+    "seed": 1,
+    "candidate": "j-reversible-sp-unigram-48k",
+    "category": "kanbun",
+    "bits_per_byte": 5.3660701774988295,
+    "nll_sum": 228658.532040596,
+    "tokens": 22299,
+    "source_chars": 20492,
+    "source_bytes": 61476
+  },
+  {
+    "dataset": "hardened",
+    "seed": 1,
+    "candidate": "j-reversible-sp-unigram-48k",
+    "category": "kakikudashi",
+    "bits_per_byte": 3.8633113684687306,
+    "nll_sum": 281727.86876153946,
+    "tokens": 29205,
+    "source_chars": 35069,
+    "source_bytes": 105207
+  },
+  {
+    "dataset": "hardened",
+    "seed": 2,
+    "candidate": "j-reversible-sp-unigram-32k",
+    "category": "kanbun",
+    "bits_per_byte": 5.299372708129856,
+    "nll_sum": 225816.42507362366,
+    "tokens": 22498,
+    "source_chars": 20492,
+    "source_bytes": 61476
+  },
+  {
+    "dataset": "hardened",
+    "seed": 2,
+    "candidate": "j-reversible-sp-unigram-32k",
+    "category": "kakikudashi",
+    "bits_per_byte": 3.8407116204147873,
+    "nll_sum": 280079.8061938286,
+    "tokens": 30169,
+    "source_chars": 35069,
+    "source_bytes": 105207
+  },
+  {
+    "dataset": "hardened",
+    "seed": 2,
+    "candidate": "j-reversible-sp-unigram-48k",
+    "category": "kanbun",
+    "bits_per_byte": 5.406127245429307,
+    "nll_sum": 230365.44045734406,
+    "tokens": 22299,
+    "source_chars": 20492,
+    "source_bytes": 61476
+  },
+  {
+    "dataset": "hardened",
+    "seed": 2,
+    "candidate": "j-reversible-sp-unigram-48k",
+    "category": "kakikudashi",
+    "bits_per_byte": 3.8732180893419073,
+    "nll_sum": 282450.3058347702,
+    "tokens": 29205,
+    "source_chars": 35069,
+    "source_bytes": 105207
+  }
+]

@@ -1,0 +1,254 @@
+[
+  {
+    "eval_item_id": "sha256:96aeaa383fe19500f67ab5c71e70d7042feb832494aa0007754713b4e630f389",
+    "matched_eval_id": "sha256:a05dbe2eedd3a0fe701d7bedf87a3b9686bb6946f86ae63cecbab04c90f10a50",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:4e3234d3af2b2dafc65fd7b8748f7c160f025cef33f9eb8eddd7e18186a7f922",
+    "matched_eval_id": "sha256:6de13c5c4fdc2040d3f99cd89928c4a69002f2bf1771598a554b788b055b70dd",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:6259454de99aa3b8e695ec9364e60267de0d5278f7ac140849c036eaa67d93ed",
+    "matched_eval_id": "sha256:312ae331d8237b0b1103d39ac281565dadb7def93828d5cf69dcab01d3c80de2",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:05ff8c9ab97a712f04f364b7deb4ef10b4e33656b95f93228ea543316f21abbc",
+    "matched_eval_id": "sha256:3778469cd5531b752417cb316b884caa759e118a02a8c99f1d4f38234ccfea6a",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:c1a7f670724745ae88aada5428ae3553696b7c352ba3d61f755353fd27e1777a",
+    "matched_eval_id": "sha256:9943c64f92a7048807544eb2a1f2f4c1e6bf514cb24dba40900dc13ae968ab2f",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:10370d61fea5af0359de8100694be108285d6b6a0ed9068134e8ac531ca3f640",
+    "matched_eval_id": "sha256:cb593e2e5ae145a1bd8aca1bf4567dd78a5b3a41a734ca667f02c2038a6c91b3",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:a65cec68c03e3d3ef4c7efd3bf43e0a176466219e24ddfefe33da9f43b2a81e9",
+    "matched_eval_id": "sha256:adc0905bda4a7e4f51b90bbf883b083263335921764503ed11364c89070287ef",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:4761f3920bd3e59f76446f874c2cc7e7f32ce7cba01641d38246366dd9e315e9",
+    "matched_eval_id": "sha256:796ddf383be2dc3e97fcfd4363364669fb30abcea098c82dea765dcc0a5c8158",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:b47e5c821e12021158f2b5dea719017735f4c476bf3616b47f97933716ace2ef",
+    "matched_eval_id": "sha256:72fa506b1c4c7d8cdc2476b479a21d68f034ce2635ae3fd1e9897213a1f67881",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:bc802fcecca935bf322194ea4e3ff32c3aee87e5ee3bda746a2ee7d9c41a09e9",
+    "matched_eval_id": "sha256:70896f2064e3f5af527246154987f7f452bfd095d32f8041b78e21b8d86d04e1",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:ced8f88369fd38a5fbc540c1e03cc4d99a57cba719361bb580f2743d6b3f39c2",
+    "matched_eval_id": "sha256:947710dbde824382415406318fbccc2ca2c7e710b2e962116574f404fe529a9d",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:7fccfa03276492ffc2db0b6baded0590a2842f0770706a9d29cffeb818c11398",
+    "matched_eval_id": "sha256:e6d156d5418d00b6b909259abdcc5d7be30f24f9d96df12a09abeca0801df0c2",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:095b3153abe3251bf1c0fdae631dd7599365a3ff4bf194a6ecc8ec22fa9005f2",
+    "matched_eval_id": "sha256:28df2cdf3c5c10d16d40ba10f9acf5a1d8400dd98f33089c4bb6c5220c14720c",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:789cf049e9920071607e707c5a577afa34d4ebba7e32723c2255788580058271",
+    "matched_eval_id": "sha256:5115fc796db32eecfc4e4cdeec6614259aa560722160e4d371302f5be4d9f03d",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:c5bb7823a6239adbf230210b2308211a787780b8edc4d472999f68f8cfa0c733",
+    "matched_eval_id": "sha256:764a0bd04f37cacbb8cb23b2084ade750b2763eef2ae7f4e691b89680d9f2045",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:5bb48d78fd21e91dc425e8e09f104dbe98203f49014600cbc8195169768d57f3",
+    "matched_eval_id": "sha256:4883d5786c01043a60e0cc33a3e1bee4c21677a4e0e5b4c26d3894583bdcfea4",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:49f75f2f983593e5e409ad95d625b59997cded6e2c61a59cf26f19582f1a490c",
+    "matched_eval_id": "sha256:62e0a9b33e4119b62b81577df6a22dbaeb48ee480378adb3327204959d75634f",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:577b09167aa8c861b1a3efb605c8596717af126e3177e84d42aafc39781bdcdf",
+    "matched_eval_id": "sha256:d9b3967d544273bda035a4286945679ff8541b5c308605c9d6606dbf3dc9eb99",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:dd942a2a9c93d0eb990df689645ef03b77aa76e36358e50f77658b8548ff4563",
+    "matched_eval_id": "sha256:0a0d573045f60e338962a9afb6bbc9a987a80c5a84650661e8851eb1557c3a51",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:7a42974d6e88ea69b052d7d327d7bedd7236b02bcb0ce9ff68105c813498b2f6",
+    "matched_eval_id": "sha256:79656fb706d186a04abbac53598554d2d810c27bb0f23bc68e54a7c1a9a8fa2d",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:9cc4adce25d2aaec8986b47f13b92169b11b8babc4d0897c904a6310f9086c6a",
+    "matched_eval_id": "sha256:e23b0f6fccd40b1ef9e077be9b6cc030999dedcd026f9ce7235f81bc88000206",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:f110cbffe6c7c03dca6a35fa5c176a616938053c4b13f428730acc3ed68e92a8",
+    "matched_eval_id": "sha256:0bf87096ac518236ac48df7f7d63d9c4364df81af58154b5600e673af24a7f02",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:011b6ca787ef8e938422b7b257ea67a190b9d81bca4d85200af047b2e4f7533f",
+    "matched_eval_id": "sha256:264f100a7b1f48a1dec599186397ff1e23f83c1a61f57fc65ef9d2f9cd012015",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:6059b391c95142e0384083942c1c756bde45ff161bab5c230c7d5de69c661949",
+    "matched_eval_id": "sha256:b911c4def6b70f0483d6860b33d683f63eb3cace7331ea550cff67d367b0c1df",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:2d938f2678a7b3e5c66b826d52d34c7d40aca2843d6fb360adcc856bb0d8c523",
+    "matched_eval_id": "sha256:45e6081b55c9041bb7ef33bcb98801547f8964788f6d65562c04296dce5417bb",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:197e8a5b556481d9a177c52b1a1850513bb388800068c277f235ce53b8c61c1c",
+    "matched_eval_id": "sha256:d07c9eaa6205faab1b98f35fbb52e9cd91ded56c4317c82d315ca019e549be90",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:02e8edef4d006595200356f02fd12031f605e6fb09784642452396db7b1a10e2",
+    "matched_eval_id": "sha256:97acb01cae13d5abfb3ff43f7f2b7b44a93dd5574d20471fbc1aa7e5c14dab1e",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:96d89f0057dcbde1fe3a0e7d06b67135081e03e5a127b4ad72ea4bff0854d93d",
+    "matched_eval_id": "sha256:9bc8d277e5f26a3c745278ac51343c31e0c3a6e1a32569e3d97f4fd9563bfc97",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:117d9ca9f8e5ea2d0401603c7eab6e022d70b044a227e0db3c9907ad5484cd9a",
+    "matched_eval_id": "sha256:ddbff42bf3462ee70412617c3dae6192c24d1350e0c518910bfca67b6ba78b30",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:2eca6af3a6a29907259ee9583b0e9980873f802134891ec3f49b16f0adffaed3",
+    "matched_eval_id": "sha256:dc13d8c921e2c4f84f6d27696ef6e6dbd2c58df1ce0b1df3cabbe35b14218b30",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:3c16ef54cd61e2ba4395adc3ef0b708a7a8d4f9b165c4f0891b9c277b8b4b6c4",
+    "matched_eval_id": "sha256:d42f1bee7555e4057d7cc98ced73066411bca8f9594cb70d9f19af783ef6a673",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:2da253c44b0349e2b6d1be417e7a28ef9675740a1be98793a3f9f3a791634e01",
+    "matched_eval_id": "sha256:c04523875f82a1209c6138419a4817e5b1e661aeb1ada8de0bbaed2ea99a9dc0",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:4f2477040549f593d368439e92e999d56fb7000e4daf250552ed9b1ac4d529ae",
+    "matched_eval_id": "sha256:cf8b2b6e74cd1f0b97caff3da0d06f92191883761a13c37d68c2e7b502b77367",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:3c78d220288bb13638c2d0b9ca2ba41658ea629b25fa0614c545637867df768e",
+    "matched_eval_id": "sha256:b9d00f1026aa7945feb82a2d102a45aeb53fd4be9d8d11905c0dca7ec61b39f6",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:96cbe22eb45037360e7f4780e2f7119881340160cfc5b16de23005fe62834ab5",
+    "matched_eval_id": "sha256:1b21ac2018bc9812f1d434eccdf058319ff181891576b1975529238edccec771",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  },
+  {
+    "eval_item_id": "sha256:0b3c4cf41edcd6d3f1c5fbf6aed213fe51b17327391bda43ffab06e04e0586ad",
+    "matched_eval_id": "sha256:b3eb2be4c529e1a2b5fb5de33408f875333efb731f9af981dde8361a561e1d96",
+    "similarity": 1.0,
+    "method": "symmetric_5gram_overlap_coefficient",
+    "threshold": 0.8
+  }
+]

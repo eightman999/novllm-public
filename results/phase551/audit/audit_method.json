@@ -1,0 +1,55 @@
+{
+  "id_transform": "sha256 of original UTF-8 identifier; unknown stays unknown; no source text",
+  "method": {
+    "audit_normalization": "NFKC then remove Unicode whitespace; evaluation text unchanged",
+    "ngram_n": 5,
+    "near_threshold": 0.8,
+    "long_substring_chars": 50,
+    "short_substring_min_chars": 5
+  },
+  "selection": "exclude whole poem on any detected LM/tokenizer text match; stable first exact text per category",
+  "excluded_work_count": 8,
+  "flagged_eval_item_count": 133,
+  "eval_internal_near_duplicate_pairs": 185,
+  "hardened_eval_sha256": "949a77191556414facf8cb8a1f443f86c4027803ca907a69dd7b29eb4f8e627d",
+  "lm_dataset_sha256": "b25391d37b412e4ef926a493eae3e933467d2773b76d3ce0ddda5c66ffce25e5",
+  "scopes": [
+    {
+      "scope": "lm_train_30m",
+      "train_records": 7441,
+      "train_chars": 30000000,
+      "train_records_with_unknown_work_identity": 0
+    },
+    {
+      "scope": "tokenizer_J_actual_sentences_100m",
+      "train_records": 24926,
+      "train_chars": 100000000,
+      "train_records_with_unknown_work_identity": 24926
+    }
+  ],
+  "limitations": [
+    "cross-corpus work identity remains unknown even without a text match",
+    "shorter than 5 normalized chars have unknown near/substring audit",
+    "poetry only; no new prose style or separate kundoku category",
+    "near duplicates inside evaluation are reported, not all removed; bootstrap by poem accounts for within-poem clustering only",
+    "raw text not redistributed; sources have no established redistribution grant"
+  ],
+  "input_hashes": [
+    {
+      "sha256": "499c01a50919b175f0da1cab764dbc84efeee4543e297ca309d56b0599df699e",
+      "bytes": 93667129
+    },
+    {
+      "sha256": "c8370a96e320639b45c542c1c219ab42fea101ae2829d357f8cbe1078f2fe518",
+      "bytes": 6054105
+    },
+    {
+      "sha256": "e85ed3e28c2c3c5fdfd7555f9fb1e540e18e5fc27f9650e3333b144419835f74",
+      "bytes": 2155673
+    },
+    {
+      "sha256": "59676c1602602501fbe33b8fe38a5181487ecd0882444544236914a74d1adf6e",
+      "bytes": 300042096
+    }
+  ]
+}
