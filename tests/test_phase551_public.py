@@ -46,6 +46,16 @@ class PublicExportTest(unittest.TestCase):
         self.assertEqual(tables['compression'][0]['token_ratio_to_j32'], 1)
         self.assertIsNone(tables['compression'][0]['token_ratio_to_j48'])
 
+    def test_checkpoint_training_position_distinct_from_eval_denominator(self):
+        fixture = self.run_fixture()
+        score = fixture[0]['validation']['overall']
+        fixture[0]['learning_curves'] = [{'requested_budget_fraction': .2,
+            'actual_budget_fraction': .2001, 'source_chars': 6003000,
+            'validation': {'overall': score, 'domains': {'aa': score}}}]
+        row = public.aggregate([fixture])['checkpoint_domains'][0]
+        self.assertEqual(row['train_source_chars'], 6003000)
+        self.assertEqual(row['source_chars'], 5)
+
     def test_duplicate_runs_rejected(self):
         with self.assertRaises(ValueError):
             public.aggregate([self.run_fixture(), self.run_fixture()])

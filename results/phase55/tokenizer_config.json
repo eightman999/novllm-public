@@ -10,6 +10,7 @@
     "input_sha256": "59676c1602602501fbe33b8fe38a5181487ecd0882444544236914a74d1adf6e",
     "corpus_manifest_sha256": "a30916e213ca254905131c763d92384e5dae490375ff5c7be6bc24de39e24ab3",
     "config_sha256": "2e2150018217affaeb981f61c2eb9d454debac74c5911ec708417ff3070c2f27",
+    "tokenizer_sha256": "c72521c81db95543dde07dc24283d10850d2b78c3806c1a29a41aae4ec9a9923",
     "library_version": "0.2.2",
     "trainer_args": {
       "add_dummy_prefix": false,
@@ -46,6 +47,7 @@
     "input_sha256": "59676c1602602501fbe33b8fe38a5181487ecd0882444544236914a74d1adf6e",
     "corpus_manifest_sha256": "a30916e213ca254905131c763d92384e5dae490375ff5c7be6bc24de39e24ab3",
     "config_sha256": "6954733127d1f78cafdabc0a798b7d6c0f9e627b78a1da3435c2cd854d5ecca0",
+    "tokenizer_sha256": "2a8c9f22004b13cde8cf0a77a111cb24512cbb7ff0420c903fe90e5772031677",
     "library_version": "0.2.2",
     "trainer_args": {
       "add_dummy_prefix": false,
@@ -82,6 +84,7 @@
     "input_sha256": "59676c1602602501fbe33b8fe38a5181487ecd0882444544236914a74d1adf6e",
     "corpus_manifest_sha256": "a30916e213ca254905131c763d92384e5dae490375ff5c7be6bc24de39e24ab3",
     "config_sha256": "8b68a88a3fcd4e332b68e94990269a7cd1e3528204486bd247cc56e627c39856",
+    "tokenizer_sha256": "76ae66f6521f9d2cd9f53abb6a03ba575e15b94d5148f96bb5b5b32a76d7be1b",
     "library_version": "0.2.2",
     "trainer_args": {
       "add_dummy_prefix": false,

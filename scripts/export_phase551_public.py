@@ -46,6 +46,7 @@ def export_tokenizers(source, output):
             **enums(config, {'adapter': {'reversible'}, 'adapter_version': {'escape-e000-v2'}, 'recipe': {'J'}}),
             'input_sha256': digest(config.get('input_sha256')), 'corpus_manifest_sha256': digest(config.get('corpus_manifest_sha256')),
             'config_sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
+            'tokenizer_sha256': digest(config.get('artifacts_sha256', {}).get('tokenizer.model')),
             'library_version': version(config.get('library_version')),
             'trainer_args': {**numbers(trainer, 'add_dummy_prefix allow_whitespace_only_pieces bos_id byte_fallback character_coverage eos_id hard_vocab_limit input_sentence_size max_sentence_length num_threads pad_id remove_extra_whitespaces seed_sentencepiece_size shrinking_factor shuffle_input_sentence split_by_unicode_script split_by_whitespace unk_id vocab_size'.split()),
                 **enums(trainer, {'model_type': {'unigram'}, 'normalization_rule_name': {'identity'}})}})
@@ -101,7 +102,7 @@ def aggregate(runs):
             for domain, values in sorted(curve.get('validation', {}).get('domains', {}).items()):
                 if domain not in DOMAINS:
                     raise ValueError('unknown curve domain')
-                tables['checkpoint_domains'].append({**identity, 'domain': domain, **numbers(curve, ['requested_budget_fraction', 'actual_budget_fraction', 'source_chars']), **validate_score(values)})
+                tables['checkpoint_domains'].append({**identity, 'domain': domain, **numbers(curve, ['requested_budget_fraction', 'actual_budget_fraction']), 'train_source_chars': numbers(curve, ['source_chars'])['source_chars'], **validate_score(values)})
         params = numbers(metrics.get('parameter_report', {}), ['total', 'embedding', 'non_embedding', 'lm_head'])
         if all(params[k] is not None for k in ('total', 'embedding', 'non_embedding')) and params['total'] != params['embedding'] + params['non_embedding']:
             raise ValueError('parameter breakdown mismatch')

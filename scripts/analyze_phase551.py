@@ -4,6 +4,7 @@ import argparse
 import csv
 import json
 import math
+import re
 from pathlib import Path
 
 
@@ -37,6 +38,20 @@ def write_table(folder, name, rows):
             writer.writerows(rows)
 
 
+REQUIRED_DOMAINS = set('aa aozora_kyu_kyu aozora_shin_kyu aozora_shin_shin gyaru historical_kana kakikudashi kanbun old_orthography technical unicode_edge web_novel whitespace'.split())
+REQUIRED_FRACTIONS = {0.19, 0.20, 0.50, 0.75, 1.0}
+
+
+def required_equal(rows, baseline, keys, label):
+    for key in keys:
+        if rows.get(key) is None or rows.get(key) != baseline.get(key):
+            raise ValueError(f'{label} mismatch or missing: {key}')
+
+
+def sha256(value):
+    return isinstance(value, str) and re.fullmatch('[a-f0-9]{64}', value) is not None
+
+
 def analyze(folder, seed=1):
     folder = Path(folder)
     names = [f'j-reversible-sp-unigram-{n}k' for n in (32, 48, 64)]
@@ -47,10 +62,36 @@ def analyze(folder, seed=1):
             raise ValueError(f'one complete J32/J48/J64 cohort required in {table}')
         return {r['candidate']: r for r in selected}
     summary, params, hardware, controls, provenance = [cohort(t) for t in ('summary', 'parameters', 'hardware', 'conditions', 'provenance')]
+    tokenizer_rows = json.loads((folder / 'tokenizer_config.json').read_text())
+    tokenizer_rows = [r for r in tokenizer_rows if r.get('candidate') in names]
+    if len(tokenizer_rows) != 3 or {r['candidate'] for r in tokenizer_rows} != set(names):
+        raise ValueError('one tokenizer config per candidate required')
+    tokenizers = {r['candidate']: r for r in tokenizer_rows}
+    reference_tokenizer = tokenizers[names[1]]
+    for size, name in zip((32000, 48000, 64000), names):
+        tok = tokenizers[name]
+        if params[name].get('vocab_size') != size or tok.get('actual_vocab_size') != size or tok.get('trainer_args', {}).get('vocab_size') != size:
+            raise ValueError('candidate vocabulary mismatch')
+        if not sha256(tok.get('tokenizer_sha256')) or tok['tokenizer_sha256'] != provenance[name].get('tokenizer_sha256'):
+            raise ValueError('tokenizer artifact mismatch')
+        for key in ('input_sha256', 'corpus_manifest_sha256'):
+            if not sha256(tok.get(key)):
+                raise ValueError(f'tokenizer input missing: {key}')
+        required_equal(tok, reference_tokenizer, ('input_sha256', 'corpus_manifest_sha256', 'source_chars', 'seed', 'adapter', 'adapter_version', 'recipe', 'library_version'), 'tokenizer input')
+        args = tok.get('trainer_args', {})
+        reference_args = reference_tokenizer.get('trainer_args', {})
+        if args.get('normalization_rule_name') != 'identity' or tok.get('recipe') != 'J' or tok.get('adapter_version') != 'escape-e000-v2':
+            raise ValueError('tokenizer normalization recipe mismatch')
+        if {k:v for k,v in args.items() if k != 'vocab_size'} != {k:v for k,v in reference_args.items() if k != 'vocab_size'}:
+            raise ValueError('tokenizer preprocessing mismatch')
+        for table, key, expected in (('domain_bpb', 'domain', REQUIRED_DOMAINS), ('checkpoints', 'requested_budget_fraction', REQUIRED_FRACTIONS)):
+            rows = [r for r in tables[table] if r.get('candidate') == name and r.get('seed') == seed]
+            if len(rows) != len(expected) or {r.get(key) for r in rows} != expected:
+                raise ValueError(f'missing or duplicate {table} cohort')
     baseline = summary[names[1]]
     for name in names:
         r = summary[name]
-        if not r['complete'] or r['train_source_chars'] != 30_000_000:
+        if r['complete'] is not True or r['train_source_chars'] != 30_000_000:
             raise ValueError('incomplete source budget')
         for key in ('dataset_sha256', 'records_sha256', 'code_phase55_same_source_runtime.py', 'code_probe_lm.py', 'code_probe_lm_data.py', 'code_tokenizer_adapters.py'):
             if provenance[name].get(key) is None or provenance[name].get(key) != provenance[names[1]].get(key):
@@ -58,16 +99,16 @@ def analyze(folder, seed=1):
         for key in ('train_source_chars', 'train_source_bytes', 'source_chars', 'source_bytes'):
             if r[key] != baseline[key]:
                 raise ValueError(f'comparison denominator mismatch: {key}')
+        if hardware[name].get('dtype') != 'float32':
+            raise ValueError('float32 comparison required')
         if hardware[name]['gpu'] is None or hardware[name]['gpu'] != hardware[names[1]]['gpu']:
             raise ValueError('same GPU comparison required')
         if abs(params[name]['total'] - 150_000_000) / 150_000_000 > 0.001:
             raise ValueError('parameter budget mismatch')
-        for key in ('hidden_size','num_layers','num_heads','num_kv_heads','context_length'):
-            if params[name][key] != params[names[1]][key]:
-                raise ValueError(f'architecture mismatch: {key}')
-        for key in ('learning_rate','weight_decay','gradient_clip','sequence_length','batch_size','source_char_budget','warmup_source_chars','deterministic_algorithms'):
-            if controls[name].get(key) != controls[names[1]].get(key):
-                raise ValueError(f'control mismatch: {key}')
+        required_equal(params[name], params[names[1]], ('hidden_size','num_layers','num_heads','num_kv_heads','context_length','bos_id','eos_id','pad_id','tie_embeddings','activation','norm','positional_encoding'), 'architecture')
+        required_equal(controls[name], controls[names[1]], ('learning_rate','weight_decay','gradient_clip','sequence_length','batch_size','source_char_budget','warmup_source_chars','deterministic_algorithms','total_steps','warmup_steps','scheduler_axis','regime','is_smoke','verify_resume'), 'control')
+        if controls[name]['scheduler_axis'] != 'source_chars' or controls[name]['regime'] != 'same_source_characters' or controls[name]['is_smoke'] is not False:
+            raise ValueError('non-comparable training regime')
     delta = change(summary[names[2]]['bits_per_byte'], baseline['bits_per_byte'])
     decision = {'seed': seed, 'j64_vs_j48_bpb_percent': delta, 'decision': classify(delta),
                 'thresholds_fixed_before_result': {'A_lte':-1.0,'B_lte':-0.5,'C_lt':0.5,'D_gte':0.5},
@@ -104,7 +145,7 @@ def analyze(folder, seed=1):
             'j64_vs_j48_percent':change(row['eval_bits_per_byte'],old['eval_bits_per_byte'])})
     for name,rows in [('j64_comparison',comparison),('j64_domain_delta',domains),('j64_checkpoint_delta',curves)]:write_table(folder,name,rows)
     (folder/'decision.json').write_text(json.dumps(decision,ensure_ascii=False,indent=2)+'\n')
-    lines=['# Phase 5.5.1 J64 exploratory result','','## Measured','','Same source / approximately 150M total parameters; seed 1, RTX 3060.','', '| Metric | J32 | J48 | J64 |','|---|---:|---:|---:|']
+    lines=['# Phase 5.5.1 J64 exploratory result','','## Measured','',f"Same source / approximately 150M total parameters; seed {seed}, {hardware[names[1]]['gpu']}.",'', '| Metric | J32 | J48 | J64 |','|---|---:|---:|---:|']
     for key in ('overall_bpb','train_tokens','train_chars_per_token','train_bytes_per_token','train_seconds','invocation_seconds','peak_vram_bytes','total_params','embedding_params','non_embedding_params','embedding_ratio'):
         values=[r[key] for r in comparison]
         lines.append('| '+key+' | '+' | '.join('unknown' if x is None else str(round(x,6)) if isinstance(x,float) else str(x) for x in values)+' |')
