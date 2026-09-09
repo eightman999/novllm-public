@@ -126,6 +126,30 @@ def export(source,output):
             lo,hi=r['paired_work_bootstrap_95_percentile_ci']
             comparisons.append({**{k:r[k] for k in ('dataset','seed','category')},**{k:numeric(r[k]) for k in ('works','j32_bpb','j48_bpb','relative_percent','bootstrap_replicates','bootstrap_seed')},'ci_lower_percent':numeric(lo),'ci_upper_percent':numeric(hi)})
         for name,table in [('evaluation_summary',summaries),('work_scores',work_scores),('evaluation_checks',checks),('hardened_comparison',comparisons)]:emit(output,name,table)
+    trajectory=source/'trajectory'
+    if (trajectory/'done.json').exists():
+        done=json.loads((trajectory/'done.json').read_text())
+        if done.get('complete') is not True:raise ValueError('trajectory incomplete')
+        domains=[];works=[];checkpoints=[]
+        for size,fraction in [(n,f) for n in ('32k','48k') for f in (.2,.5,.75)]+[('64k',f) for f in (.2,.5,.75,1.)]:
+            r=json.loads((trajectory/f'hardened-seed1-{size}-fraction-{fraction:.6f}.json').read_text())
+            identity={'candidate':'j-reversible-sp-unigram-'+size,'seed':1,'requested_budget_fraction':fraction}
+            assert all(r[k]==v for k,v in identity.items()) and r['dataset']=='hardened'
+            assert r['checkpoint_unchanged_after_evaluation'] and r['preservation']['exact_preservation']==1 and r['preservation']['unknown_tokens']==0
+            assert r['dataset_sha256']==metadata['hardened_eval_sha256']
+            training={k:numeric(r[k]) for k in ('actual_budget_fraction','actual_source_chars','train_tokens','train_steps','source_char_budget')}
+            for category,score in r['domains'].items():
+                if category not in {'kanbun','kakikudashi'}:raise ValueError('unexpected trajectory category')
+                domains.append({**identity,**training,'category':category,**{k:numeric(score[k]) for k in ('bits_per_byte','nll_sum','tokens','source_chars','source_bytes')}})
+            for w in r['works']:
+                if w['category'] not in {'kanbun','kakikudashi'}:raise ValueError('unexpected trajectory work category')
+                works.append({**identity,'category':w['category'],'source_work_identity':opaque(w['work_id']),**{k:numeric(w[k]) for k in ('bits_per_byte','nll_sum','tokens','source_chars','source_bytes')}})
+            checkpoints.append({**identity,**training,'checkpoint_sha256':digest(r['checkpoint_sha256']),'dataset_sha256':digest(r['dataset_sha256']),'items_sha256':digest(r['items_sha256']),'checkpoint_unchanged':True,'exact_preservation':1.0,'unknown_tokens':0})
+        deltas=[]
+        for r in json.loads((trajectory/'comparison.json').read_text()):
+            if r['reference_candidate'] not in ('32k','48k') or r['target_candidate'] not in ('48k','64k') or r['category'] not in ('kanbun','kakikudashi') or r['dataset']!='hardened' or r['seed']!=1:raise ValueError('unexpected trajectory comparison')
+            deltas.append({**{k:r[k] for k in ('reference_candidate','target_candidate','category')},**{k:numeric(r[k]) for k in ('seed','requested_budget_fraction','reference_bpb','target_bpb','relative_percent','delta_bpb','reference_actual_source_chars','target_actual_source_chars','work_count')},**{k:digest(r[k]) for k in ('reference_checkpoint_sha256','target_checkpoint_sha256')}})
+        for name,table in [('trajectory_domains',domains),('trajectory_works',works),('trajectory_checkpoints',checkpoints),('trajectory_comparison',deltas)]:emit(output,name,table)
     return {'audit_rows':len(audit_rows),'manifest_rows':len(manifest),'stats_rows':len(stats),'near_pairs':len(pairs)}
 
 if __name__=='__main__':

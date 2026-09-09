@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-09-09T04:31:58.456211+00:00",
+  "scope": "observed during J64 run; not retrospective proof of old runs",
+  "python": "3.14.4",
+  "pytorch": "2.13.0+cu126",
+  "cuda_runtime": "12.6",
+  "sentencepiece": "0.2.2",
+  "cudnn": 91002,
+  "driver": [
+    "580.173.02",
+    "580.173.02"
+  ],
+  "gpus": [
+    {
+      "name": "NVIDIA GeForce RTX 3060",
+      "total_memory_bytes": 12488343552,
+      "compute_capability": [
+        8,
+        6
+      ]
+    },
+    {
+      "name": "Tesla P100-PCIE-16GB",
+      "total_memory_bytes": 17059545088,
+      "compute_capability": [
+        6,
+        0
+      ]
+    }
+  ]
+}

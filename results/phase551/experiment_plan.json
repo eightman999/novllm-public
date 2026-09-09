@@ -1,0 +1,36 @@
+{
+  "format": "phase551-exploratory-plan-v1",
+  "candidate": "j-reversible-sp-unigram-64k",
+  "seed": 1,
+  "comparison_candidates": [
+    "j-reversible-sp-unigram-32k",
+    "j-reversible-sp-unigram-48k"
+  ],
+  "training_gpu": "NVIDIA GeForce RTX 3060",
+  "source_chars": 30000000,
+  "target_total_parameters": 150000000,
+  "context_length": 4096,
+  "dtype": "float32",
+  "regime": "same_source_characters",
+  "scheduler_axis": "source_chars",
+  "checkpoint_requested_fractions": [
+    0.19,
+    0.2,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "dataset_sha256": "b25391d37b412e4ef926a493eae3e933467d2773b76d3ce0ddda5c66ffce25e5",
+  "decision_metric": "100 * (J64 overall BPB / same-seed J48 overall BPB - 1)",
+  "fixed_decision_thresholds": {
+    "A": "delta <= -1.0",
+    "B": "-1.0 < delta <= -0.5",
+    "C": "-0.5 < delta < 0.5",
+    "D": "delta >= 0.5"
+  },
+  "threshold_origin": "user supplied plan before J64 launch",
+  "extra_p100_evaluation": "user authorized retained checkpoint evaluation; hardened data, seed1 only, no new training",
+  "second_seed_started": false,
+  "freeze_ready": false,
+  "phase6_started": false
+}
