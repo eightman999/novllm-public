@@ -163,3 +163,20 @@ python tools/build_summaries.py \
 ## ライセンス
 
 このリポジトリ内のコードと文書は[MIT License](LICENSE)で提供します。ただし、学習データ、入力データベース、ベースモデル、tokenizer、学習済み重み、生成物、その他の第三者素材には、それぞれの権利者が定める別のライセンスや利用条件が適用されます。
+
+## NovTokenizer: published measurements
+
+| Lineage | Protocol | Status |
+|---|---|---|
+| J32 | 150M total parameters, same 30M source characters, two seeds | completed reference |
+| J48 | same source/total as J32 | leading candidate; cultural regressions remain |
+| J64 | same protocol, representative seed 1 only | exploratory; running |
+
+Tokenizer freeze is not decided. Phase 6 has not started.
+
+- [Phase 5.5 measured tables](results/phase55/README.md): final/domain/checkpoint BPB, compression, timing, memory, model size and provenance.
+- [Hardened kanbun/kakikudashi evaluation](results/phase551/audit/README.md): 457 works per category, text-match audit, paired work-bootstrap intervals, and public-source retrieval hashes.
+- [Fixed runtime and input requirements](research/phase55_runtime/README.md).
+- [Native macOS live monitor](tools/novtokenizer-monitor/README.md): local read-only SSH refresh; no AI calls.
+
+Published results exclude corpus text, checkpoint binaries, private service addresses and original private identifiers. Work-level NLL/counts permit independent BPB/bootstrap reanalysis without those inputs.
